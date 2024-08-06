@@ -1,25 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MRomalde\\Desktop\\VVBANEW\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\BancoVVBA.csproj": {}
+    "C:\\Users\\MRoma\\Desktop\\BancoVVBA new\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\BancoVVBA.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MRomalde\\Desktop\\VVBANEW\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\BancoVVBA.csproj": {
+    "C:\\Users\\MRoma\\Desktop\\BancoVVBA new\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\BancoVVBA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MRomalde\\Desktop\\VVBANEW\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\BancoVVBA.csproj",
+        "projectUniqueName": "C:\\Users\\MRoma\\Desktop\\BancoVVBA new\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\BancoVVBA.csproj",
         "projectName": "BancoVVBA",
-        "projectPath": "C:\\Users\\MRomalde\\Desktop\\VVBANEW\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\BancoVVBA.csproj",
-        "packagesPath": "C:\\Users\\MRomalde\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MRomalde\\Desktop\\VVBANEW\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\obj\\",
+        "projectPath": "C:\\Users\\MRoma\\Desktop\\BancoVVBA new\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\BancoVVBA.csproj",
+        "packagesPath": "C:\\Users\\MRoma\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MRoma\\Desktop\\BancoVVBA new\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\MRomalde\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\MRoma\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -27,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -88,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

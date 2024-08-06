@@ -1,27 +1,35 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder,FormGroup, Validators } from '@angular/forms';
-import { UserService } from 'src/app/Services/User/user.service';
-import { User } from 'src/app/Modelos/user';
+import { FormBuilder,FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { UserService } from '../../../Services/User/user.service';
+import { User } from '../../../Modelos/user';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
+  standalone: true,
+  imports: [FormsModule, CommonModule, RouterModule, ReactiveFormsModule]
+
 })
 export class RegisterComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private userService:UserService,private router:Router,
     private toastr:ToastrService) { }
 
-  userToRegister:User;
-  surnameName:string;
-  alias:string=null;
+  userToRegister!:User;
+  surnameName!:string;
+  alias!:string;
   aliasExistInDb:boolean=true;
-  currentUser:User=JSON.parse(localStorage.getItem("currentUser"));
+  storedUser = localStorage.getItem("currentUser");
+  currentUser: User = this.storedUser ? JSON.parse(this.storedUser) : null;
   //it's a list because the back come as a list of an asynchronous operation
-  userToCreateAccount:User[];
+  userToCreateAccount!:User[];
 
   formModel=this.fb.group({
     Name:['',[Validators.required]],
@@ -49,11 +57,11 @@ export class RegisterComponent implements OnInit {
 
   ComparePasswords(fb:FormGroup){
     var confirmPasswordControl=fb.get("ConfirmPassword");
-    if(confirmPasswordControl.errors==null|| 'passwordMismatch' in confirmPasswordControl.errors){
-      if(fb.get("Password").value!=confirmPasswordControl.value)
-        confirmPasswordControl.setErrors({passwordMismatch:true});
+    if(confirmPasswordControl!.errors==null|| 'passwordMismatch' in confirmPasswordControl!.errors){
+      if(fb.get("Password")!.value!=confirmPasswordControl!.value)
+        confirmPasswordControl!.setErrors({passwordMismatch:true});
       else
-        confirmPasswordControl.setErrors(null);
+        confirmPasswordControl!.setErrors(null);
     }
   }
 
@@ -105,9 +113,23 @@ export class RegisterComponent implements OnInit {
       this.alias=data;
     //if you need to use the values of the subscribe, you need to put all your behind code inside it   
     //asign the form values to the user
-    this.userToRegister=new User(this.surnameName,this.alias,this.formModel.value.UserName,
-    this.formModel.value.Passwords.Password,this.formModel.value.Dni,this.formModel.value.Telephone,
-    this.formModel.value.Email,3);
+    const userName: string = String(this.formModel.value.UserName || '');
+    const password: string = String(this.formModel.value.Passwords.Password || '');
+    const dni: string = String(this.formModel.value.Dni || '');
+    const telephone: string = String(this.formModel.value.Telephone || '');
+    const email: string = String(this.formModel.value.Email || '');
+
+    this.userToRegister = new User(
+      this.surnameName,
+      this.alias,
+      userName,
+      password,
+      dni,
+      telephone,
+      email,
+      3
+    );
+    
     
     //call to the service to register user
     this.userService.CreateUserFromRegister(this.userToRegister).subscribe((res:any)=>{

@@ -1,18 +1,24 @@
 import { Component, OnInit, OnChanges, OnDestroy } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
-import { User } from 'src/app/Modelos/user';
+import { User } from '../../../Modelos/user';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.css']
+  styleUrls: ['./nav-bar.component.css'],
+  standalone: true,
+  imports: [FormsModule, CommonModule, RouterModule]
+
 })
 export class NavBarComponent implements OnInit, OnDestroy {
   title="Banco VVBA";
   userIsLogged:boolean=false;
-  userRol:string;
-  user:User;
-  counter:number;
+  userRol!:string;
+  user!:User;
+  counter!:number;
   navigationSubscription;
   constructor(private router:Router) 
     {
@@ -48,7 +54,7 @@ export class NavBarComponent implements OnInit, OnDestroy {
       this.userIsLogged=false;
     else{
       this.userIsLogged=true;
-      this.user=JSON.parse(localStorage.getItem("currentUser"));
+      this.user=JSON.parse(localStorage.getItem("currentUser")!);
     
     }
   }

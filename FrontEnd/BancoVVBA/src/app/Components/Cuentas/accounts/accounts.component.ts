@@ -1,18 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { Account } from 'src/app/Modelos/account';
-import { AccountService } from 'src/app/Services/Account/account.service';
+import { Account } from '../../../Modelos/account';
+import { AccountService } from '../../../Services/Account/account.service';
 import { Router } from '@angular/router';
-import { User } from 'src/app/Modelos/user';
+import { User } from '../../../Modelos/user';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-accounts',
   templateUrl: './accounts.component.html',
-  styleUrls: ['./accounts.component.css']
+  styleUrls: ['./accounts.component.css'],
+  standalone: true,
+  imports: [FormsModule, CommonModule, RouterModule]
+
 })
 export class AccountsComponent implements OnInit {
 
-  accountList:Account[];
-  currentUser:User=JSON.parse(localStorage.getItem("currentUser"));
+  accountList!: Account[];
+  storedUser = localStorage.getItem("currentUser");
+  currentUser: User = this.storedUser ? JSON.parse(this.storedUser) : null;
   constructor(private accService:AccountService,private router:Router) { }
   p:number=1;
   ngOnInit() {

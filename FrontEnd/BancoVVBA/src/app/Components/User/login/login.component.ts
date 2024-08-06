@@ -1,23 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder,FormGroup, Validators } from '@angular/forms';
-import { UserService } from 'src/app/Services/User/user.service';
+import { FormBuilder,FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { UserService } from '../../../Services/User/user.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { LoginModel } from 'src/app/Modelos/loginModel';
-import { User } from 'src/app/Modelos/user';
+import { LoginModel } from '../../../Modelos/loginModel';
+import { User } from '../../../Modelos/user';
 import { JsonPipe } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  standalone: true,
+  imports: [FormsModule, CommonModule, RouterModule, ReactiveFormsModule]
+
 })
 export class LoginComponent implements OnInit {
 
-  loginModel:LoginModel;
-  userLogin:User[];
-  refresh:string;
-  currentUser:User=JSON.parse(localStorage.getItem("currentUser"));
+  loginModel!:LoginModel;
+  userLogin!:User[];
+  refresh!:string;
+  storedUser = localStorage.getItem("currentUser");
+  currentUser: User = this.storedUser ? JSON.parse(this.storedUser) : null;
   constructor(private fb:FormBuilder,private userService:UserService,private router:Router,
     private toastr:ToastrService) { }
 
@@ -37,7 +44,7 @@ export class LoginComponent implements OnInit {
     this.formLogin.reset();  
   }
   Login(){
-    this.loginModel=new LoginModel(this.formLogin.value.UserName,this.formLogin.value.Password);
+    this.loginModel=new LoginModel(this.formLogin.value.UserName!,this.formLogin.value.Password!);
     this.userService.Login(this.loginModel).subscribe(res=>{      
       this.userLogin=res;
       if(this.userLogin==undefined){

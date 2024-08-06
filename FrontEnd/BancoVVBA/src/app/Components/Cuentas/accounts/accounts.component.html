@@ -1,4 +1,3 @@
-<app-account-search></app-account-search>
 <ul>
   <div class="row underline" style="margin-bottom: 0">
     <div class="row col-11" style="margin-top: 10px">
@@ -8,7 +7,7 @@
      </div>
      <div class="col-sm-1 marginLeft paddingRight" style="margin-top: 10px">Editar</div>
   </div>
-  <li *ngFor="let account of accountList | paginate: {itemsPerPage:7, currentPage:p}" class="row z-depth-1 grey lighten-4">
+  <li *ngFor="let account of accountList" class="row z-depth-1 grey lighten-4">
     <a class="col-11 row">
       <div class="col-sm-4">{{account.user.surnameName}}</div>
       <div class="col-sm-4">{{account.balance}} €</div>
@@ -19,5 +18,4 @@
     </div>
   </li>
 </ul>
-<pagination-controls (pageChange)="p = $event"></pagination-controls>
 

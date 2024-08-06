@@ -4,17 +4,25 @@ import { CommissionService } from '../../../Services/Commission/commission.servi
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { User } from '../../../Modelos/user';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+
 
 @Component({
   selector: 'app-commissions',
   templateUrl: './commissions.component.html',
-  styleUrls: ['./commissions.component.css']
+  styleUrls: ['./commissions.component.css'],
+  standalone: true,
+  imports: [FormsModule, CommonModule, RouterModule]
 })
 export class CommissionsComponent implements OnInit {
 
   commissions!:Commission[];
   p:number=1;
-  currentUser:User=JSON.parse(localStorage.getItem("currentUser"));
+  storedUser = localStorage.getItem("currentUser");
+  currentUser: User = this.storedUser ? JSON.parse(this.storedUser) : null;
+
   constructor(private comService:CommissionService,private toastr:ToastrService,private router:Router) { }
 
   ngOnInit() {

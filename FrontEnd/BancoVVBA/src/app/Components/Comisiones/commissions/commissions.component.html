@@ -8,23 +8,17 @@
      </div>
      <div class="col-sm-1 marginLeft paddingRight" style="margin-top: 10px">Borrar</div>
   </div>
-  <li *ngFor="let com of commissions | paginate: {itemsPerPage:7, currentPage:p}" class="row z-depth-1 grey lighten-4">
+  <li *ngFor="let com of commissions" class="row z-depth-1 grey lighten-4">
     <a class="col-11 row" routerLink="/commission/details/{{com.commissionId}}">
      <div class="col-8">{{com.description}}</div>
      <div class="col-3">{{com.price}} €</div>
     </a>
     <div class="col-1"><button class="btn red"
        title="Borrar usuario"
-       mwlConfirmationPopover
-       popoverTitle="Eliminar"
-       popoverMessage="¿Desea eliminar la comision:  {{com.description}}?"
-       placement="left"
        (confirm)="DeleteCommission(com)"
-       (cancel)="cancelClicked=true"
        >
      <i class="material-icons">cancel_presentation</i></button></div>
   </li>
 </ul>
-<pagination-controls (pageChange)="p = $event"></pagination-controls>
 
 

@@ -1,6 +1,7 @@
 // src/app/app.component.ts
 import { Component } from '@angular/core';
 import { RouterOutlet, RouterModule  } from '@angular/router';
+import { NavBarComponent } from './Components/NavBar/nav-bar/nav-bar.component';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,8 @@ import { RouterOutlet, RouterModule  } from '@angular/router';
   standalone: true,
   imports: [
     RouterOutlet,
-    RouterModule
+    RouterModule,
+    NavBarComponent
   ]
 })
 export class AppComponent {

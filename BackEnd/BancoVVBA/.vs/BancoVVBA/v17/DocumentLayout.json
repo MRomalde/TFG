@@ -1,10 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\MRomalde\\Desktop\\VVBANEW\\TFG\\BackEnd\\BancoVVBA\\",
+  "WorkspaceRootPath": "C:\\Users\\MRoma\\Desktop\\BancoVVBA new\\TFG\\BackEnd\\BancoVVBA\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{488DF75E-13E9-4D7F-ACE7-E70BA15AB077}|BancoVVBA\\BancoVVBA.csproj|c:\\users\\mromalde\\desktop\\vvbanew\\tfg\\backend\\bancovvba\\bancovvba\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{488DF75E-13E9-4D7F-ACE7-E70BA15AB077}|BancoVVBA\\BancoVVBA.csproj|solutionrelative:bancovvba\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{488DF75E-13E9-4D7F-ACE7-E70BA15AB077}|BancoVVBA\\BancoVVBA.csproj|c:\\users\\mroma\\desktop\\bancovvba new\\tfg\\backend\\bancovvba\\bancovvba\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{488DF75E-13E9-4D7F-ACE7-E70BA15AB077}|BancoVVBA\\BancoVVBA.csproj|solutionrelative:bancovvba\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{488DF75E-13E9-4D7F-ACE7-E70BA15AB077}|BancoVVBA\\BancoVVBA.csproj|c:\\users\\mroma\\desktop\\bancovvba new\\tfg\\backend\\bancovvba\\bancovvba\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{488DF75E-13E9-4D7F-ACE7-E70BA15AB077}|BancoVVBA\\BancoVVBA.csproj|solutionrelative:bancovvba\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\MRomalde\\Desktop\\VVBANEW\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "BancoVVBA\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\MRomalde\\Desktop\\VVBANEW\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\Controllers\\UserController.cs",
-              "RelativeToolTip": "BancoVVBA\\Controllers\\UserController.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAABAAAAAfAAAA",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\MRoma\\Desktop\\BancoVVBA new\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\appsettings.json",
+              "RelativeDocumentMoniker": "BancoVVBA\\appsettings.json",
+              "ToolTip": "C:\\Users\\MRoma\\Desktop\\BancoVVBA new\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\appsettings.json",
+              "RelativeToolTip": "BancoVVBA\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-06T15:50:29.209Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\MRoma\\Desktop\\BancoVVBA new\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\Program.cs",
+              "RelativeDocumentMoniker": "BancoVVBA\\Program.cs",
+              "ToolTip": "C:\\Users\\MRoma\\Desktop\\BancoVVBA new\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\Program.cs",
+              "RelativeToolTip": "BancoVVBA\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-27T11:49:21.655Z",
+              "WhenOpened": "2024-08-06T15:50:22.476Z",
               "EditorCaption": ""
             }
           ]

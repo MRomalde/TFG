@@ -1,21 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/app/Services/User/user.service';
-import { User } from 'src/app/Modelos/user';
+import { UserService } from '../../../Services/User/user.service';
+import { User } from '../../../Modelos/user';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
-
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css']
+  styleUrls: ['./users.component.css'],
+  standalone: true,
+  imports: [FormsModule, CommonModule, RouterModule]
+
 })
 export class UsersComponent implements OnInit {
 
-  userList: User[];
-  numberOfAdmins:Number;
-  userToDelete:User;
+  userList!: User[];
+  numberOfAdmins!:Number;
+  userToDelete!:User;
   p:number=1;
-  currentUser:User=JSON.parse(localStorage.getItem("currentUser"));
+  storedUser = localStorage.getItem("currentUser");
+  currentUser: User = this.storedUser ? JSON.parse(this.storedUser) : null;
   constructor(private userService:UserService,private toastr:ToastrService,private route:Router) { }
 
   ngOnInit() {
@@ -34,7 +40,7 @@ export class UsersComponent implements OnInit {
   DeleteUser(user:User){
     
     this.userService.GetUserById(user.userId).subscribe(res=>{
-    this.userToDelete=JSON.parse(localStorage.getItem("currentUser"));
+    this.userToDelete=JSON.parse(localStorage.getItem("currentUser")!);
       if(user.typeAccessId==1){
         if(user.userId==this.userToDelete.userId)
           this.toastr.error("No se puede borrar a uno mismo","Borrado incompleto");
