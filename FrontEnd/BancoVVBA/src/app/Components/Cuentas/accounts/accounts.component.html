@@ -1,0 +1,23 @@
+<app-account-search></app-account-search>
+<ul>
+  <div class="row underline" style="margin-bottom: 0">
+    <div class="row col-11" style="margin-top: 10px">
+       <div class="col-sm-4">Nombre</div>
+       <div class="col-sm-4">Fondo</div>
+       <div class="col-sm-3">IBAN</div>
+     </div>
+     <div class="col-sm-1 marginLeft paddingRight" style="margin-top: 10px">Editar</div>
+  </div>
+  <li *ngFor="let account of accountList | paginate: {itemsPerPage:7, currentPage:p}" class="row z-depth-1 grey lighten-4">
+    <a class="col-11 row">
+      <div class="col-sm-4">{{account.user.surnameName}}</div>
+      <div class="col-sm-4">{{account.balance}} €</div>
+      <div class="col-sm-3">{{account.iban}}</div>
+    </a>
+    <div class="col-1">
+      <button routerLink="/account/details/{{account.accountId}}" class="btn" title="Editar usuario"><i class="material-icons">info</i></button>
+    </div>
+  </li>
+</ul>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+

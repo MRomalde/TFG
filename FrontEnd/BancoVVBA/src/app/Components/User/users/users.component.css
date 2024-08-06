@@ -1,0 +1,29 @@
+button{
+    float: right;
+  }
+  .row .col{
+    padding: 0 0 0 0.75em;
+  }
+  .marginLeft{
+    text-align: center
+  }
+  li{
+    background-color: gray;
+    cursor: pointer;
+  }
+  a {
+    color:#616161;
+    text-decoration: none;
+  }
+  a:hover {
+    color: black;
+  }
+  .fijo{
+    position: static;
+    z-index: 1;
+}
+.underline{
+  text-decoration: underline;
+}
+
+  

@@ -1,0 +1,8 @@
+body{
+    font-family: Tahoma, sans-serif;
+}
+@media (min-width: 993px){
+.container {
+    width: 100%
+}
+}

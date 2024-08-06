@@ -3,48 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\MRomalde\\Desktop\\VVBANEW\\TFG\\BackEnd\\BancoVVBA\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{488DF75E-13E9-4D7F-ACE7-E70BA15AB077}|BancoVVBA\\BancoVVBA.csproj|c:\\users\\mromalde\\desktop\\vvbanew\\tfg\\backend\\bancovvba\\bancovvba\\services\\accountservice\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{488DF75E-13E9-4D7F-ACE7-E70BA15AB077}|BancoVVBA\\BancoVVBA.csproj|solutionrelative:bancovvba\\services\\accountservice\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{488DF75E-13E9-4D7F-ACE7-E70BA15AB077}|BancoVVBA\\BancoVVBA.csproj|c:\\users\\mromalde\\desktop\\vvbanew\\tfg\\backend\\bancovvba\\bancovvba\\models\\useraccountsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{488DF75E-13E9-4D7F-ACE7-E70BA15AB077}|BancoVVBA\\BancoVVBA.csproj|solutionrelative:bancovvba\\models\\useraccountsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{488DF75E-13E9-4D7F-ACE7-E70BA15AB077}|BancoVVBA\\BancoVVBA.csproj|c:\\users\\mromalde\\desktop\\vvbanew\\tfg\\backend\\bancovvba\\bancovvba\\models\\usersviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{488DF75E-13E9-4D7F-ACE7-E70BA15AB077}|BancoVVBA\\BancoVVBA.csproj|solutionrelative:bancovvba\\models\\usersviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{488DF75E-13E9-4D7F-ACE7-E70BA15AB077}|BancoVVBA\\BancoVVBA.csproj|c:\\users\\mromalde\\desktop\\vvbanew\\tfg\\backend\\bancovvba\\bancovvba\\repositories\\operationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{488DF75E-13E9-4D7F-ACE7-E70BA15AB077}|BancoVVBA\\BancoVVBA.csproj|solutionrelative:bancovvba\\repositories\\operationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{488DF75E-13E9-4D7F-ACE7-E70BA15AB077}|BancoVVBA\\BancoVVBA.csproj|c:\\users\\mromalde\\desktop\\vvbanew\\tfg\\backend\\bancovvba\\bancovvba\\repositories\\accountcommissionsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{488DF75E-13E9-4D7F-ACE7-E70BA15AB077}|BancoVVBA\\BancoVVBA.csproj|solutionrelative:bancovvba\\repositories\\accountcommissionsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{488DF75E-13E9-4D7F-ACE7-E70BA15AB077}|BancoVVBA\\BancoVVBA.csproj|c:\\users\\mromalde\\desktop\\vvbanew\\tfg\\backend\\bancovvba\\bancovvba\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{488DF75E-13E9-4D7F-ACE7-E70BA15AB077}|BancoVVBA\\BancoVVBA.csproj|solutionrelative:bancovvba\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{488DF75E-13E9-4D7F-ACE7-E70BA15AB077}|BancoVVBA\\BancoVVBA.csproj|c:\\users\\mromalde\\desktop\\vvbanew\\tfg\\backend\\bancovvba\\bancovvba\\repositories\\accountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{488DF75E-13E9-4D7F-ACE7-E70BA15AB077}|BancoVVBA\\BancoVVBA.csproj|solutionrelative:bancovvba\\repositories\\accountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{488DF75E-13E9-4D7F-ACE7-E70BA15AB077}|BancoVVBA\\BancoVVBA.csproj|c:\\users\\mromalde\\desktop\\vvbanew\\tfg\\backend\\bancovvba\\bancovvba\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{488DF75E-13E9-4D7F-ACE7-E70BA15AB077}|BancoVVBA\\BancoVVBA.csproj|solutionrelative:bancovvba\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{488DF75E-13E9-4D7F-ACE7-E70BA15AB077}|BancoVVBA\\BancoVVBA.csproj|c:\\users\\mromalde\\desktop\\vvbanew\\tfg\\backend\\bancovvba\\bancovvba\\bancovvba.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{488DF75E-13E9-4D7F-ACE7-E70BA15AB077}|BancoVVBA\\BancoVVBA.csproj|solutionrelative:bancovvba\\bancovvba.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{488DF75E-13E9-4D7F-ACE7-E70BA15AB077}|BancoVVBA\\BancoVVBA.csproj|c:\\users\\mromalde\\desktop\\vvbanew\\tfg\\backend\\bancovvba\\bancovvba\\controllers\\accountcommissionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{488DF75E-13E9-4D7F-ACE7-E70BA15AB077}|BancoVVBA\\BancoVVBA.csproj|solutionrelative:bancovvba\\controllers\\accountcommissionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{488DF75E-13E9-4D7F-ACE7-E70BA15AB077}|BancoVVBA\\BancoVVBA.csproj|c:\\users\\mromalde\\desktop\\vvbanew\\tfg\\backend\\bancovvba\\bancovvba\\services\\accountcommissions\\accountcommissionsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{488DF75E-13E9-4D7F-ACE7-E70BA15AB077}|BancoVVBA\\BancoVVBA.csproj|solutionrelative:bancovvba\\services\\accountcommissions\\accountcommissionsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,140 +14,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UsersViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\MRomalde\\Desktop\\VVBANEW\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\Models\\UsersViewModel.cs",
-              "RelativeDocumentMoniker": "BancoVVBA\\Models\\UsersViewModel.cs",
-              "ToolTip": "C:\\Users\\MRomalde\\Desktop\\VVBANEW\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\Models\\UsersViewModel.cs",
-              "RelativeToolTip": "BancoVVBA\\Models\\UsersViewModel.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAkwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-27T11:59:20.034Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UserAccountsViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\MRomalde\\Desktop\\VVBANEW\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\Models\\UserAccountsViewModel.cs",
-              "RelativeDocumentMoniker": "BancoVVBA\\Models\\UserAccountsViewModel.cs",
-              "ToolTip": "C:\\Users\\MRomalde\\Desktop\\VVBANEW\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\Models\\UserAccountsViewModel.cs",
-              "RelativeToolTip": "BancoVVBA\\Models\\UserAccountsViewModel.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABYAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-27T11:57:33.427Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AccountService.cs",
-              "DocumentMoniker": "C:\\Users\\MRomalde\\Desktop\\VVBANEW\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\Services\\AccountService\\AccountService.cs",
-              "RelativeDocumentMoniker": "BancoVVBA\\Services\\AccountService\\AccountService.cs",
-              "ToolTip": "C:\\Users\\MRomalde\\Desktop\\VVBANEW\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\Services\\AccountService\\AccountService.cs",
-              "RelativeToolTip": "BancoVVBA\\Services\\AccountService\\AccountService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAA2AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-27T11:56:29.666Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AccountCommissionsRepository.cs",
-              "DocumentMoniker": "C:\\Users\\MRomalde\\Desktop\\VVBANEW\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\Repositories\\AccountCommissionsRepository.cs",
-              "RelativeDocumentMoniker": "BancoVVBA\\Repositories\\AccountCommissionsRepository.cs",
-              "ToolTip": "C:\\Users\\MRomalde\\Desktop\\VVBANEW\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\Repositories\\AccountCommissionsRepository.cs",
-              "RelativeToolTip": "BancoVVBA\\Repositories\\AccountCommissionsRepository.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAAtwDYAAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-27T11:55:08.485Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\MRomalde\\Desktop\\VVBANEW\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\Repositories\\UserRepository.cs",
-              "RelativeDocumentMoniker": "BancoVVBA\\Repositories\\UserRepository.cs",
-              "ToolTip": "C:\\Users\\MRomalde\\Desktop\\VVBANEW\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\Repositories\\UserRepository.cs",
-              "RelativeToolTip": "BancoVVBA\\Repositories\\UserRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-27T11:55:01.71Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "OperationRepository.cs",
-              "DocumentMoniker": "C:\\Users\\MRomalde\\Desktop\\VVBANEW\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\Repositories\\OperationRepository.cs",
-              "RelativeDocumentMoniker": "BancoVVBA\\Repositories\\OperationRepository.cs",
-              "ToolTip": "C:\\Users\\MRomalde\\Desktop\\VVBANEW\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\Repositories\\OperationRepository.cs",
-              "RelativeToolTip": "BancoVVBA\\Repositories\\OperationRepository.cs",
-              "ViewState": "AQIAADUAAAAAAAAAAAApwEIAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-27T11:54:52.419Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AccountRepository.cs",
-              "DocumentMoniker": "C:\\Users\\MRomalde\\Desktop\\VVBANEW\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\Repositories\\AccountRepository.cs",
-              "RelativeDocumentMoniker": "BancoVVBA\\Repositories\\AccountRepository.cs",
-              "ToolTip": "C:\\Users\\MRomalde\\Desktop\\VVBANEW\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\Repositories\\AccountRepository.cs",
-              "RelativeToolTip": "BancoVVBA\\Repositories\\AccountRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-27T11:51:09.371Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "BancoVVBA.csproj",
-              "DocumentMoniker": "C:\\Users\\MRomalde\\Desktop\\VVBANEW\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\BancoVVBA.csproj",
-              "RelativeDocumentMoniker": "BancoVVBA\\BancoVVBA.csproj",
-              "ToolTip": "C:\\Users\\MRomalde\\Desktop\\VVBANEW\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\BancoVVBA.csproj",
-              "RelativeToolTip": "BancoVVBA\\BancoVVBA.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAABaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-06-27T11:49:53.943Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\MRomalde\\Desktop\\VVBANEW\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "BancoVVBA\\Controllers\\UserController.cs",
               "ToolTip": "C:\\Users\\MRomalde\\Desktop\\VVBANEW\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\Controllers\\UserController.cs",
               "RelativeToolTip": "BancoVVBA\\Controllers\\UserController.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAoAAAAGAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAABAAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-27T11:49:21.655Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "AccountCommissionsController.cs",
-              "DocumentMoniker": "C:\\Users\\MRomalde\\Desktop\\VVBANEW\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\Controllers\\AccountCommissionsController.cs",
-              "RelativeDocumentMoniker": "BancoVVBA\\Controllers\\AccountCommissionsController.cs",
-              "ToolTip": "C:\\Users\\MRomalde\\Desktop\\VVBANEW\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\Controllers\\AccountCommissionsController.cs",
-              "RelativeToolTip": "BancoVVBA\\Controllers\\AccountCommissionsController.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAAwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-27T11:44:26.901Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "AccountCommissionsService.cs",
-              "DocumentMoniker": "C:\\Users\\MRomalde\\Desktop\\VVBANEW\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\Services\\AccountCommissions\\AccountCommissionsService.cs",
-              "RelativeDocumentMoniker": "BancoVVBA\\Services\\AccountCommissions\\AccountCommissionsService.cs",
-              "ToolTip": "C:\\Users\\MRomalde\\Desktop\\VVBANEW\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\Services\\AccountCommissions\\AccountCommissionsService.cs",
-              "RelativeToolTip": "BancoVVBA\\Services\\AccountCommissions\\AccountCommissionsService.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAgwBkAAABJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-27T11:42:57.357Z"
+              "WhenOpened": "2024-06-27T11:49:21.655Z",
+              "EditorCaption": ""
             }
           ]
         }

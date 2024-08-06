@@ -1,0 +1,51 @@
+<div style="margin-top: 10px" class="row">
+<a routerLink="/operation/create" class="btn-floating btn-large bg-primary" title="Añadir operacion">
+  <i class="material-icons left">add_circle</i></a>
+  <div class="col-5"></div>
+  <label class="col-2">Seleccione la cuenta: </label>
+  <form [formGroup]="formModel" class="col-4">
+    <select class=" custom-select" style="display:block;"  formControlName="selectAccounts" (change)="GetOpersByAccountId()" >
+    <option>Todos</option>
+    <option *ngFor="let acc of accounts" value="{{acc.accountId}}">
+      {{acc.user.surnameName}}
+    </option>
+  </select>
+</form>
+</div>
+<ul>
+<div class="row underline" style="margin-bottom: 0">
+  <div class="row col-11" style="margin-top: 10px">
+     <div class="col-sm-3"><span>Nombre de la cuenta</span></div>
+     <div class="col-sm-2 col-md-2">Fecha</div>
+     <div class="col-sm-2 col-md-5">Mensaje</div>
+     <div class="col-sm-2 col-md-1">Concepto</div>
+     <div class="col-sm-1 col-md-1">Cantidad</div>
+   </div>
+   <div class="col-sm-1 marginLeft paddingRight" style="margin-top: 10px">Borrar</div>
+</div>
+<li *ngFor="let oper of operations | paginate: {itemsPerPage:7, currentPage:p}" class="row z-depth-1 grey lighten-4">
+  <a class="col-11 row" routerLink="/operation/details/{{oper.operationId}}">
+   <div class="col-3">{{oper.account.user.surnameName}}</div>
+   <div class="col-2 col-md-2">{{oper.date | date:'dd/MM/yyyy'}}.</div>
+   <div class="col-2 col-md-5">{{oper.message}}</div>
+   <div class="col-2 col-md-1">{{oper.concept}}</div>
+   <div class="col-2 col-md-1">{{oper.amount}}</div>
+  </a>
+  <div class="col-1"><button class="btn red"
+     title="Borrar usuario"
+     mwlConfirmationPopover
+     popoverTitle="Eliminar"
+     popoverMessage="¿Desea eliminar la operacion de {{oper.account.user.surnameName}}?"
+     placement="left"
+     (confirm)="DeleteOper(oper)"
+     (cancel)="cancelClicked=true"
+     >
+   <i class="material-icons">delete</i></button></div>
+</li>
+</ul>
+<div class="row">
+<pagination-controls (pageChange)="p = $event" class="col-3"></pagination-controls>
+<div class="col-4"></div>
+<div class="col-2"><input [(ngModel)]="nameOfExcelFile" placeholder="Nombre del archivo"></div>
+<button class="btn btnExcel col-3" (click)="ExportToExcel()"><i class="material-icons">import_export</i>Exportar a excel</button>
+</div>

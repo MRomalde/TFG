@@ -1,0 +1,22 @@
+<nav>
+    <div class="nav-wrapper bg-primary">
+      <div class="container">
+        <a class="brand-logo">{{title}}</a>
+        <ul class="logout">
+          <li *ngIf="userIsLogged"><a (click)="Logout()">Logout</a></li>
+          <li style="padding-left: 1%" *ngIf="userIsLogged">Bienvenido: {{user.surnameName}}</li>
+          <li style="padding-left: 25%" *ngIf="!userIsLogged">Realizado por Miguel Angel Romalde Dorado</li>
+        </ul>        
+        <ul class="right hide-on-med-and-down">
+          <li *ngIf="userIsLogged && user.typeAccessId==1"><a routerLink="/user/users">Usuarios</a></li>
+          <li *ngIf="userIsLogged && user.typeAccessId==1"><a routerLink="/account/accounts">Cuentas</a></li>
+          <li *ngIf="userIsLogged && user.typeAccessId==1"><a routerLink="/operation/operations">Operaciones</a></li>
+          <li *ngIf="userIsLogged && user.typeAccessId==1"><a routerLink="/commission/commissions">Comisiones</a></li>
+          <li *ngIf="userIsLogged && user.typeAccessId==1"><a routerLink="/accountCommission/accountCommissions">Cuentas y comisiones</a></li>
+          <li *ngIf="userIsLogged"><a routerLink="/user/myAccount">Mi cuenta</a></li>
+          <li *ngIf="!userIsLogged"><a routerLink="/user/login">Login</a></li>
+          <li *ngIf="!userIsLogged"><a routerLink="/user/register">Registro</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>

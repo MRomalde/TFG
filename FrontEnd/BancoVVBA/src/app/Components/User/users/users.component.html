@@ -1,0 +1,39 @@
+<app-search></app-search>
+  <a routerLink="/user/create" class="btn-floating btn-large bg-primary" title="Añadir usuario">
+    <i class="material-icons left">add_circle</i></a>
+<ul>
+  <div class="row underline" style="margin-bottom: 0">
+    <div class="row col-11" style="margin-top: 10px">
+       <div class="col-sm-3"><span>Nombre</span></div>
+       <div class="col-sm-1 col-md-1">Alias</div>
+       <div class="col-sm-2 col-md-2">Dni</div>
+       <div class="col-sm-2 col-md-2">Mail</div>
+       <div class="col-sm-1 col-md-2">Telefono</div>
+       <div class="col-sm-2 col-md-2">Tipo de usuario</div>
+     </div>
+     <div class="col-sm-1 marginLeft paddingRight" style="margin-top: 10px">Borrar</div>
+  </div>
+  <li *ngFor="let user of userList | paginate: {itemsPerPage:7, currentPage:p}" class="row z-depth-1 grey lighten-4">
+    <a class="col-11 row" routerLink="/user/details/{{user.userId}}">
+     <div class="col-3">{{user.surnameName}}</div>
+     <div class="col-1 col-md-1">{{user.alias}}</div>
+     <div class="col-2 col-md-2">{{user.dni}}</div>
+     <div class="col-2 col-md-2">{{user.mail}}</div>
+     <div class="col-2 col-md-2">{{user.telephone}}</div>
+     <div class="col-2 col-md-1">{{user.typeAccess.description}}</div>
+    </a>
+    <div class="col-1"><button class="btn red"
+       title="Borrar usuario"
+       mwlConfirmationPopover
+       popoverTitle="Eliminar"
+       popoverMessage="¿Desea eliminar a {{user.surnameName}}?"
+       placement="left"
+       (confirm)="DeleteUser(user)"
+       (cancel)="cancelClicked=true"
+       >
+     <i class="material-icons">highlight_off</i></button></div>
+  </li>
+</ul>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+

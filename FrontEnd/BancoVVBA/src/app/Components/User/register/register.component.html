@@ -1,0 +1,74 @@
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4 mx-auto mt-3">
+        <div class="card_register">
+          <div class="card">
+            <div class="card-body text-center">
+              <form [formGroup]="formModel" autocomplete="off" (submit)="Register()">
+                <h1 class="h3 mb-3 font-weight-normal">Registro</h1>
+                <div class="form-group required">
+                    <input type="text" class="form-control" minlength="2" maxlength="24"
+                     placeholder="Nombre" formControlName="Name">
+                     <label class="text-danger" *ngIf="formModel.get('Name').touched && formModel.get('Name').errors?.required">El campo nombre es obligatorio</label>
+                     <label class="text-danger" *ngIf="formModel.get('Name').touched && formModel.get('Name').errors?.minlength">El campo nombre debe tener como minimo 2 caracteres</label>
+                  </div>
+                  <div class="form-group required">
+                      <input type="text" class="form-control" minlength="2" maxlength="25"
+                       placeholder="Apellidos" formControlName="Surname">
+                       <label class="text-danger" *ngIf="formModel.get('Surname').touched && formModel.get('Surname').errors?.required">El campo apellidos es obligatorio</label>
+                       <label class="text-danger" *ngIf="formModel.get('Surname').touched && formModel.get('Surname').errors?.minlength">El campo apellidos debe tener como minimo 2 caracteres</label>
+                    </div>
+                <div class="form-group required">
+                  <input type="email" class="form-control" maxlength="50"
+                   placeholder="Email" formControlName="Email">
+                   <label class="text-danger" *ngIf="formModel.get('Email').touched && formModel.get('Email').errors?.email">El campo email no tiene el formato correcto</label>                   
+                   <label class="text-danger" *ngIf="formModel.get('Email').touched && formModel.get('Email').errors?.EmailExist">El email debe ser unico, ya existe un email con ese valor</label>
+                   <label class="text-danger" *ngIf="formModel.get('Email').touched && formModel.get('Email').errors?.required">El campo email es obligatorio</label>
+                  </div>
+                <div class="form-group required">
+                  <input class="form-control" type="number"
+                  placeholder="Telefono" formControlName="Telephone">
+                  <label class="text-danger" *ngIf="formModel.get('Telephone').touched && formModel.get('Telephone').errors?.required">El campo telefono es obligatorio</label>
+                  <label class="text-danger" *ngIf="formModel.get('Telephone').touched && (formModel.get('Telephone').errors?.min||formModel.get('Telephone').errors?.max)">El campo telefono tiene que empezar por 6 o por 7 y tener 9 digitos</label>
+                </div>
+                <div class="form-group required">
+                    <input type="text" class="form-control" pattern="\d{8}[A-Z]"
+                     placeholder="Dni" formControlName="Dni" maxlength="9">
+                     <label class="text-danger" *ngIf="formModel.get('Dni').touched && formModel.get('Dni').errors?.required">El campo dni es obligatorio</label>
+                     <label class="text-danger" *ngIf="formModel.get('Dni').touched && formModel.get('Dni').errors?.pattern">El dni tiene que tener 8 cifras y letra mayuscula</label>
+                     <label class="text-danger" *ngIf="formModel.get('Dni').touched && formModel.get('Dni').errors?.DniExist">El dni debe ser unico, ya existe un dni con ese valor</label>
+                </div>
+                <div class="form-group required">
+                   <input type="text" class="form-control"
+                    placeholder="Username" formControlName="UserName" maxlength="15">
+                    <label class="text-danger" *ngIf="formModel.get('UserName').touched && formModel.get('UserName').errors?.required">El campo username es obligatorio</label>
+                    <label class="text-danger" *ngIf="formModel.get('UserName').touched && formModel.get('UserName').errors?.LoginExist">El username debe ser unico, ya existe un username con ese valor</label>
+               </div>
+               <div formGroupName="Passwords">
+                  <div class="form-group required">
+                    <input type="password" class="form-control" maxlength="25"
+                    placeholder="Password" formControlName="Password">
+                    <label class="text-danger" *ngIf="formModel.get('Passwords.Password').touched && formModel.get('Passwords.Password').errors?.required">El campo password es obligatorio</label>
+
+                  </div>
+                  <div class="form-group required">
+                      <input type="password" class="form-control"
+                      placeholder="Confirm password" formControlName="ConfirmPassword" maxlength="25">
+                      <label class="text-danger" *ngIf="formModel.get('Passwords.ConfirmPassword').touched && formModel.get('Passwords.ConfirmPassword').errors?.required">El campo confirm password es obligatorio</label>
+                      <label class="text-danger" *ngIf="formModel.get('Passwords.ConfirmPassword').touched && formModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch">Las contraseñas no coinciden</label>
+                    </div>
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-lg btn-primary btn-block" [disabled]="!formModel.valid">
+                  Registrar
+                </button>
+              </div>
+              <a routerLink="/user/login" class="form-control irALogin">Ir a login </a>  
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  
