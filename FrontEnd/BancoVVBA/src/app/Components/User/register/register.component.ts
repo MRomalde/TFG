@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder,FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder,FormGroup, Validators, ReactiveFormsModule} from '@angular/forms';
 import { UserService } from '../../../Services/User/user.service';
 import { User } from '../../../Modelos/user';
 import { Router } from '@angular/router';
@@ -7,7 +7,10 @@ import { ToastrService } from 'ngx-toastr';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-
+import { AbstractControl, ValidationErrors } from '@angular/forms';
+import { Observable, of } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
+import { UsersTypeAccess } from '../../../Modelos/usersTypeAccess';
 
 @Component({
   selector: 'app-register',
@@ -64,83 +67,73 @@ export class RegisterComponent implements OnInit {
         confirmPasswordControl!.setErrors(null);
     }
   }
+// DniExistInDb validator
+DniExistInDb(control: AbstractControl): Observable<ValidationErrors | null> {
+  return this.userService.DniExistInDb(control.value).pipe(
+    map(data => (data ? { DniExist: true } : null)),
+    catchError(() => of(null))
+  );
+}
 
-  DniExistInDb(fb:FormGroup){
-    return new Promise(res=>{
-    var dniControlValue=fb.value;
-    this.userService.DniExistInDb(dniControlValue).subscribe(data=>{
-      if(data){
-        fb.setErrors({DniExist:true});
-      }
-      else{
-        fb.setErrors(null);
-      }
-    })
-  })
-  }
+// LoginExistInDb validator
+LoginExistInDb(control: AbstractControl): Observable<ValidationErrors | null> {
+  return this.userService.LoginExistInDb(control.value).pipe(
+    map(data => (data ? { LoginExist: true } : null)),
+    catchError(() => of(null))
+  );
+}
 
-  LoginExistInDb(fb:FormGroup){
-    return new Promise(res=>{
-      var loginControlValue=fb.value;
-      this.userService.LoginExistInDb(loginControlValue).subscribe(data=>{
-        if(data)
-          fb.setErrors({LoginExist:true});
-        else
-          fb.setErrors(null);
-      })
+// EmailExistInDb validator
+EmailExistInDb(control: AbstractControl): Observable<ValidationErrors | null> {
+  return this.userService.EmailExistInDb(control.value).pipe(
+    map(data => (data ? { EmailExist: true } : null)),
+    catchError(() => of(null))
+  );
+}
 
-    })
-  }
+Register() {
+  this.surnameName = this.formModel.value.Surname + "," + this.formModel.value.Name;
+  this.alias = this.surnameName.substring(0, 2) + this.surnameName.substring(this.surnameName.length - 2);
 
-  EmailExistInDb(fb:FormGroup){
-    return new Promise(res=>{
-      var emailControlValue=fb.value;
-      this.userService.EmailExistInDb(emailControlValue).subscribe(data=>{
-        if(data)
-          fb.setErrors({EmailExist:true});
-        else
-          fb.setErrors(null);
-      })
+  this.userService.AliasExistInDb(this.alias).subscribe(data => {
+      this.alias = data;
+      
+      // Asignar los valores del formulario al usuario
+      const userName: string = String(this.formModel.value.UserName || '');
+      const password: string = String(this.formModel.value.Passwords.Password || '');
+      const dni: string = String(this.formModel.value.Dni || '');
+      const telephone: string = String(this.formModel.value.Telephone || '');
+      const email: string = String(this.formModel.value.Email || '');
+      
+      // Crear el usuario con el typeAccessId establecido en 3
+      this.userToRegister = new User(
+          this.surnameName,
+          this.alias,
+          userName,
+          password,
+          dni,
+          Number(telephone),
+          email,
+          3 // TypeAccessId establecido en 3
+      );
+      
+      // Llamar al servicio para registrar al usuario
+      this.userService.CreateUserFromRegister(this.userToRegister).subscribe({
+          next: (res: any) => {
+              this.formModel.reset();
+              this.toastr.success("Nuevo usuario creado", "Registrado con éxito");
+              this.router.navigate(["/user/login"]);
+          },
+          error: (err: any) => {
+              console.log('Register failed:', err);
+              if (err.error && err.error.errors) {
+                  console.log('Validation errors:', err.error.errors);
+              }
+          }
+      });
+  });
+}
 
-    })
-  }
-
-    Register(){
-    this.surnameName=this.formModel.value.Surname +","+this.formModel.value.Name;
-    this.alias=this.surnameName.substring(0,2) + this.surnameName.substring(this.surnameName.length-2);
-    
-    this.userService.AliasExistInDb(this.alias).subscribe(data=>{
-      this.alias=data;
-    //if you need to use the values of the subscribe, you need to put all your behind code inside it   
-    //asign the form values to the user
-    const userName: string = String(this.formModel.value.UserName || '');
-    const password: string = String(this.formModel.value.Passwords.Password || '');
-    const dni: string = String(this.formModel.value.Dni || '');
-    const telephone: string = String(this.formModel.value.Telephone || '');
-    const email: string = String(this.formModel.value.Email || '');
-
-    this.userToRegister = new User(
-      this.surnameName,
-      this.alias,
-      userName,
-      password,
-      dni,
-      telephone,
-      email,
-      3
-    );
-    
-    
-    //call to the service to register user
-    this.userService.CreateUserFromRegister(this.userToRegister).subscribe((res:any)=>{
-      //find the user created and then create his account  in the back
-      this.formModel.reset();
-      this.toastr.success("Nuevo usuario creado","Registrado con exito");
-      this.router.navigate(["/user/login"]);
-    },
-    err=>{console.log(err)});
-  })
-  }
 }
 
 

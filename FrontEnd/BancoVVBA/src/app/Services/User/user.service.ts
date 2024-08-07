@@ -81,10 +81,7 @@ export class UserService {
     return this.http.get(this.Uri+ "/CheckIfAliasExistInDb/"+ alias,{responseType:'text'}).pipe(catchError(this.handleError<any>('AliasExist',[])));
   }
   
-
-
-
-  private handleError<T> (operation = 'operation', result?: T) {
+private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
    
       // TODO: send the error to remote logging infrastructure

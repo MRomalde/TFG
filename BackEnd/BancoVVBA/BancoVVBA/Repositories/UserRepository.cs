@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Banco_VVBA.Models;
 
 namespace Banco_VVBA.Repositories
 {
@@ -36,7 +37,20 @@ namespace Banco_VVBA.Repositories
         {
             //create here an instance of the account service
             _accountService = new AccountService(_context, _configuration);
-            _context.Users.Add(userModel);
+            var newUser = new UsersViewModel
+            {
+                SurnameName = userModel.SurnameName,
+                Alias = userModel.Alias,
+                Login = userModel.Login,
+                Password = userModel.Password,
+                Dni = userModel.Dni,
+                Telephone = userModel.Telephone,
+                Mail = userModel.Mail,
+                TypeAccessId = userModel.TypeAccessId,
+                // No necesitas asignar TypeAccess aquí
+                TypeAccess = await _context.UsersTypeAccess.FindAsync(userModel.TypeAccessId)
+            };
+            _context.Users.Add(newUser);
             await _context.SaveChangesAsync();
             //create the account for the user
             _accountService.CreateAccountFromRegister(userModel.Dni);

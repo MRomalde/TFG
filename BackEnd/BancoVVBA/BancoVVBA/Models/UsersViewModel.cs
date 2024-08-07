@@ -32,6 +32,6 @@ namespace Banco_VVBA.Models
 
         public int TypeAccessId { get; set; }
         [ForeignKey("TypeAccessId")]
-        public required virtual UserTypeAccessViewModel TypeAccess { get; set; }
+        public required virtual UserTypeAccessViewModel TypeAccess { get; set; } = null!;
     }
 }
