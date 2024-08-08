@@ -1,0 +1,33 @@
+<div style="margin-top: 10px" class="row">
+  <div class="col-4"><button routerLink="/user/myAccount/createOper" class="btn" style="float: left">ingresar o retirar dinero</button></div>
+  <div *ngIf="currentUser!=null" class="col-4">Dinero en la cuenta: {{account[0].balance}}€</div>
+  <div class="col-4"><button routerLink="/user/myAccount/createTransfer"class="btn bg-primary">hacer una transferencia</button></div>
+</div>
+  <ul>
+  <div class="row underline" style="margin-bottom: 0">
+    <div class="row col-10" style="margin-top: 10px">
+       <div class="col-sm-2 ">Fecha</div>
+       <div class="col-sm-5 ">Mensaje</div>
+       <div class="col-sm-2 ">Concepto</div>
+       <div class="col-sm-1">Cantidad</div>
+     </div>
+     <div *ngIf="currentUser.typeAccessId==1" class="col-sm-1 marginLeft paddingRight" style="margin-top: 10px">Editar</div>
+     <div *ngIf="currentUser.typeAccessId==1" class="col-sm-1 marginLeft paddingRight" style="margin-top: 10px">Borrar</div>
+  </div>
+  <li *ngFor="let oper of operations" class="row z-depth-1 grey lighten-4">
+    <a class="col-10 row">
+     <div class="col-2 col-md-2">{{oper.date | date:'dd/MM/yyyy'}}.</div>
+     <div class="col-5 col-md-5">{{oper.message}}</div>
+     <div class="col-2 col-md-2">{{oper.concept}}</div>
+     <div class="col-1 col-md-1">{{oper.amount}}</div>
+    </a>
+    <div class="col-1">
+      <button routerLink="/user/myAccount/details/{{oper.operationId}}" *ngIf="currentUser.typeAccessId==1" class="btn bg-primary"><i class="material-icons">edit</i></button>
+    </div>
+    <div *ngIf="currentUser.typeAccessId==1" class="col-1"><button class="btn red"
+       title="Borrar usuario"
+       (confirm)="DeleteOper(oper)"
+       >
+     <i class="material-icons">delete</i></button></div>
+  </li>
+  </ul>  

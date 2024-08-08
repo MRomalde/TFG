@@ -32,7 +32,7 @@
               "RelativeDocumentMoniker": "BancoVVBA\\Repositories\\UserRepository.cs",
               "ToolTip": "C:\\Users\\MRoma\\Desktop\\BancoVVBA new\\TFG\\BackEnd\\BancoVVBA\\BancoVVBA\\Repositories\\UserRepository.cs",
               "RelativeToolTip": "BancoVVBA\\Repositories\\UserRepository.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAADwvzIAAAA4AAAA",
+              "ViewState": "AQIAACMAAAAAAAAAAAAQwDIAAAA4AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-07T12:48:33.296Z",
               "EditorCaption": ""
@@ -47,8 +47,7 @@
               "RelativeToolTip": "BancoVVBA\\Services\\UserService\\UserService.cs",
               "ViewState": "AQIAAA4AAAAAAAAAAAAAwB4AAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T12:48:29.575Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-07T12:48:29.575Z"
             },
             {
               "$type": "Document",
@@ -60,8 +59,7 @@
               "RelativeToolTip": "BancoVVBA\\Controllers\\UserController.cs",
               "ViewState": "AQIAAD4AAAAAAAAAAAAEwEwAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T10:23:22.254Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-07T10:23:22.254Z"
             }
           ]
         }

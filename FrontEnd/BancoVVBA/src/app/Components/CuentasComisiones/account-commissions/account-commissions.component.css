@@ -1,0 +1,40 @@
+button{
+    float: right;
+  }
+  .row .col{
+    padding: 0 0 0 0.75em;
+  }
+  .marginLeft{
+    text-align: center
+  }
+  li{
+    background-color: gray;
+  }
+  a {
+    color:#616161;
+    text-decoration: none;
+    cursor: auto;
+  }
+  a:hover {
+    color: black;
+    text-decoration: none;
+  }
+  .fijo{
+    position: static;
+    z-index: 1;
+}
+.underline{
+  text-decoration: underline;
+}
+select{
+  width: 40%;
+  float: right;
+}
+label{
+  font-size: 1.2em;
+  color:black
+}
+.custom-select{
+  float: left;
+  width: 100%
+}

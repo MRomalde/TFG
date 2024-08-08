@@ -1,0 +1,36 @@
+<div style="margin-top: 10px" class="row">
+  <a routerLink="/accountCommission/create" class="btn-floating btn-large bg-primary" title="Añadir Comision a una cuenta">
+    <i class="material-icons left">add_circle</i></a>
+    <div class="col-5"></div>
+    <label class="col-2">Seleccione la cuenta: </label>
+    <form [formGroup]="formModel" class="col-4">
+      <select class=" custom-select" style="display:block;"  formControlName="selectAccounts" (change)="GetAccountCommissionsByAccountId()" >
+      <option>Todos</option>
+      <option *ngFor="let acc of accounts" value="{{acc.accountId}}">
+        {{acc.user.surnameName}}
+      </option>
+    </select>
+  </form>
+  </div>
+  <ul>
+  <div class="row underline" style="margin-bottom: 0">
+    <div class="row col-11" style="margin-top: 10px">
+       <div class="col-sm-4"><span>Nombre de la cuenta</span></div>
+       <div class="col-sm-5">Descripcion</div>
+       <div class="col-sm-2">Precio</div>
+     </div>
+     <div class="col-sm-1 marginLeft paddingRight" style="margin-top: 10px">Borrar</div>
+  </div>
+  <li *ngFor="let accCom of accountCommissions" class="row z-depth-1 grey lighten-4">
+    <a class="col-11 row" routerLink="/accountCommission/details/{{accCom.accountsHasCommissionsId}}">
+      <div class="col-sm-4">{{accCom.account.user.surnameName}}</div>
+      <div class="col-sm-5">{{accCom.commission.description}}</div>
+      <div class="col-sm-2">{{accCom.commission.price}}€</div>
+    </a>
+    <div class="col-1"><button class="btn red"
+       title="Borrar comision de la cuenta"
+       (confirm)="DeleteAccountCommission(accCom)"
+       >
+     <i class="material-icons">delete</i></button></div>
+  </li>
+  </ul>  
