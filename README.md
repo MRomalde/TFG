@@ -8,3 +8,5 @@ Hay que instalar el cliente de angular, angular cli
 -npm install -g @angular/cli
 -npm install ngx-toastr --save
 -npm install @angular/animations --save
+-npm install sweetalert2
+
