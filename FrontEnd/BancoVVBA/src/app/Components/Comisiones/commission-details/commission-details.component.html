@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-5 mx-auto mt-3">
+    <div class="card_register">
+      <div class="card">
+          <div class="card-header">
+              <h6>Editar la comision: {{commission[0].description}}</h6>
+            </div>
+        <div class="card-body text-center">
+          <form [formGroup]="formModel" autocomplete="off" (submit)="Save()">
+            <img src="assets/images/banco.jpg" alt="imagen banco" class="card-img-top">
+              <div class="form-group required">
+                <input type="text" [(ngModel)]="commission[0].description" class="form-control" maxlength="50"
+                placeholder="Descripcion de la comision" formControlName="Description">
+                <label class="text-danger" *ngIf="formModel.get('Description')?.touched && formModel.get('Description')?.errors?.['required']">El campo descripcion es obligatorio</label>
+              </div>
+              <div class="form-group required">
+                <input class="form-control" type="number"  [(ngModel)]="commission[0].price"
+                placeholder="Precio" formControlName="Price">
+                <label class="text-danger" *ngIf="formModel.get('Price')?.touched && formModel.get('Price')?.errors?.['required']">El campo precio es obligatorio</label>
+                <label class="text-danger" *ngIf="formModel.get('Price')?.touched && formModel.get('Price')?.errors?.['min']">El precio minimo es 0.1</label>
+                <label class="text-danger" *ngIf="formModel.get('Price')?.touched && formModel.get('Price')?.errors?.['max']">El precio maximo es 100</label>
+              </div>
+              <div class="form-group">
+              <button type="submit" class="btn btn-lg btn-block" [disabled]="!formModel.valid">
+                <i class="material-icons left">save</i>Guardar
+              </button>
+              </div>
+              <div class="form-group">
+                <button routerLink="/commission/commissions" class="btn black btn-lg btn-block"><i class="material-icons left">view_list</i>Comisiones</button>              </div>  
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    

@@ -7,6 +7,10 @@ import { CommissionsComponent } from '../app/Components/Comisiones/commissions/c
 import { RegisterComponent } from './Components/User/register/register.component';
 import { MyAccountComponent } from './Components/User/my-account/my-account.component';
 import { AccountCommissionsComponent } from './Components/CuentasComisiones/account-commissions/account-commissions.component';
+import { CommissionDetailsComponent } from './Components/Comisiones/commission-details/commission-details.component';
+import { CommissionCreateComponent } from './Components/Comisiones/commission-create/commission-create.component';
+import { AccountDetailsComponent } from './Components/Cuentas/account-details/account-details.component';
+import { AccountCommissionsCreateComponent } from './Components/CuentasComisiones/account-commissions-create/account-commissions-create.component';
 
 export const routes: Routes = [
     {path:"user/login", component: LoginComponent},
@@ -14,9 +18,13 @@ export const routes: Routes = [
     {path:"user/users" , component: UsersComponent},
     {path:"user/myAccount", component:MyAccountComponent},
     {path:"account/accounts", component:AccountsComponent},
+    {path:"account/details/:id", component:AccountDetailsComponent},
     {path:"operation/operations", component:OperationsComponent},
     {path:"commission/commissions", component:CommissionsComponent},
+    {path:"commission/details/:id", component:CommissionDetailsComponent},
+    {path:"commission/create", component:CommissionCreateComponent},
     {path:"accountCommission/accountCommissions", component:AccountCommissionsComponent},
+    {path:"accountCommission/create", component:AccountCommissionsCreateComponent},
     {path: '', redirectTo: "/user/login", pathMatch: 'full'},
     
 

@@ -54,7 +54,6 @@ export class NavBarComponent implements OnInit, OnDestroy {
       this.userIsLogged=false;
     else{
       this.userIsLogged=true;
-      console.log(localStorage.getItem("currentUser")!)
       this.user=JSON.parse(localStorage.getItem("currentUser")!);
     
     }

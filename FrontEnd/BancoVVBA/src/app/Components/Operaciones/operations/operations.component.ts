@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-operations',
@@ -66,7 +67,27 @@ export class OperationsComponent implements OnInit {
       });
     }
   }
-  
+  confirmDelete(user: any) {
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: "¡No podrás revertir esto!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, borrar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.DeleteOper(user);
+        Swal.fire(
+          '¡Eliminado!',
+          'La operacion ha sido eliminada.',
+          'success'
+        )
+      }
+    });
+  }
   DeleteOper(oper:Operation){
     this.operations=this.operations.filter(o=>o!==oper);
     this.operService.DeleteOper(oper.operationId).subscribe(res=>this.toastr.info("Operacion borrada","Borrar"));

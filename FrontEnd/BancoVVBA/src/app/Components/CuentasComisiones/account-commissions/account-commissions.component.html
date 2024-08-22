@@ -27,10 +27,10 @@
       <div class="col-sm-5">{{accCom.commission.description}}</div>
       <div class="col-sm-2">{{accCom.commission.price}}€</div>
     </a>
-    <div class="col-1"><button class="btn red"
-       title="Borrar comision de la cuenta"
-       (confirm)="DeleteAccountCommission(accCom)"
-       >
-     <i class="material-icons">delete</i></button></div>
+    <div class="col-1">
+      <button class="btn red" title="Borrar comision de la cuenta" (click)="confirmDelete(accCom)">
+        <i class="material-icons">highlight_off</i>
+      </button>
+    </div>
   </li>
   </ul>  

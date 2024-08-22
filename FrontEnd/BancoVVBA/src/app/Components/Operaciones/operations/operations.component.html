@@ -31,10 +31,10 @@
    <div class="col-2 col-md-1">{{oper.concept}}</div>
    <div class="col-2 col-md-1">{{oper.amount}}</div>
   </a>
-  <div class="col-1"><button class="btn red"
-     title="Borrar usuario"
-     (confirm)="DeleteOper(oper)"
-     >
-   <i class="material-icons">delete</i></button></div>
+  <div class="col-1">
+    <button class="btn red" title="Borrar operacion" (click)="confirmDelete(oper)">
+      <i class="material-icons">highlight_off</i>
+    </button>
+  </div>
 </li>
 </ul>

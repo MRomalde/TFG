@@ -5,5 +5,11 @@ export class Account{
     iban!: string;
     userId!: number;
     user!: User;
-    constructor(){};
+    constructor(accountId:number, balance:number, iban:string, userId:number, user:User){
+        this.accountId=accountId;
+        this.balance=balance;
+        this.iban=iban;
+        this.userId=userId;
+        this.user=user;
+    };
 }

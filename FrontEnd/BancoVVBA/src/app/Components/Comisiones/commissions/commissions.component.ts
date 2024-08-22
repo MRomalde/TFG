@@ -7,6 +7,7 @@ import { User } from '../../../Modelos/user';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -35,7 +36,27 @@ export class CommissionsComponent implements OnInit {
   GetCommissions(){
     this.comService.GetAllCommissions().subscribe(res=>this.commissions=res);
   }
-
+  confirmDelete(user: any) {
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: "¡No podrás revertir esto!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, borrar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.DeleteCommission(user);
+        Swal.fire(
+          '¡Eliminado!',
+          'La comision ha sido eliminada.',
+          'success'
+        )
+      }
+    });
+  }
   DeleteCommission(commission:Commission){
   this.commissions=this.commissions.filter(com=>com!==commission);
   this.comService.DeleteCommission(commission.commissionId).subscribe(res=>this.toastr.info("Comision borrada","Borrado"));

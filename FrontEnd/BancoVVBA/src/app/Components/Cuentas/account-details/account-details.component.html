@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-5 mx-auto mt-3">
+      <div class="card_register">
+        <div class="card">
+            <div class="card-header">
+                Cuenta de:{{account[0].user.surnameName}}
+              </div>
+          <div class="card-body text-center">
+            <form [formGroup]="formModel" autocomplete="off" (submit)="Save()">
+                <div class="form-group required">
+                  <input type="number"  [(ngModel)]="account[0].balance" class="form-control" 
+                  placeholder="fondo" formControlName="Balance">
+                  <label class="text-danger" *ngIf="formModel.get('Balance')?.touched && formModel.get('Balance')?.errors?.['min']">El minimo de dinero en la cuenta es 0</label>
+                  <label class="text-danger" *ngIf="formModel.get('Balance')?.touched && formModel.get('Balance')?.errors?.['max']">El maximo de dinero en la cuenta puede ser 999.999.999</label>
+                </div>
+                <div class="form-group required">
+                  <input class="form-control" type="text"  [(ngModel)]="account[0].iban"
+                  placeholder="iban" formControlName="Iban" [disabled]="true">
+                </div>
+                <div class="form-group">
+                <button type="submit" class="btn btn-lg  btn-block" [disabled]="!formModel.valid">
+                  <i class="material-icons left">save</i>Guardar
+                </button>
+                </div>
+                <div class="form-group">
+                  <button routerLink="/account/accounts" class="btn black btn-lg  btn-block"><i class="material-icons left">view_list</i>cuentas</button>    
+                </div> 
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -13,7 +13,6 @@ namespace Banco_VVBA.Models
         public int AccountId { get; set; }
         [Required]
         public required double Balance { get; set; }
-        [Required]
         public required string IBAN { get; set; }
         [Required]
         public required int UserId { get; set;}

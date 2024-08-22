@@ -8,6 +8,7 @@ import { Router, RouterModule } from '@angular/router';
 import { User } from '../../../Modelos/user';
 import { Account } from '../../../Modelos/account';
 import { CommonModule } from '@angular/common';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-account-commissions',
@@ -59,6 +60,27 @@ export class AccountCommissionsComponent implements OnInit {
     }
   }
 
+  confirmDelete(user: any) {
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: "¡No podrás revertir esto!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, borrar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.DeleteAccountCommission(user);
+        Swal.fire(
+          '¡Eliminado!',
+          'La comision de la cuenta ha sido eliminada.',
+          'success'
+        )
+      }
+    });
+  }
   DeleteAccountCommission(accCom:AccountCommission){
     this.accountCommissions=this.accountCommissions.filter(o=>o!==accCom);
     this.accComService.DeleteAccountCommissions(accCom.accountsHasCommissionsId).subscribe(res=>this.toastr.info("Operacion borrada","Borrar"));

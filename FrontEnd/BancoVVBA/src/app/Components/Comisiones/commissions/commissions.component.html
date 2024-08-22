@@ -13,11 +13,11 @@
      <div class="col-8">{{com.description}}</div>
      <div class="col-3">{{com.price}} €</div>
     </a>
-    <div class="col-1"><button class="btn red"
-       title="Borrar usuario"
-       (confirm)="DeleteCommission(com)"
-       >
-     <i class="material-icons">cancel_presentation</i></button></div>
+    <div class="col-1">
+      <button class="btn red" title="Borrar comision" (click)="confirmDelete(com)">
+        <i class="material-icons">highlight_off</i>
+      </button>
+    </div>
   </li>
 </ul>
 

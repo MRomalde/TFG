@@ -21,11 +21,11 @@
      <div class="col-2 col-md-2">{{user.telephone}}</div>
      <div class="col-2 col-md-1">{{user.typeAccess.description}}</div>
     </a>
-    <div class="col-1"><button class="btn red"
-       title="Borrar usuario"
-       (confirm)="DeleteUser(user)"
-       >
-     <i class="material-icons">highlight_off</i></button></div>
+    <div class="col-1">
+      <button class="btn red" title="Borrar usuario" (click)="confirmDelete(user)">
+        <i class="material-icons">highlight_off</i>
+      </button>
+    </div>
   </li>
 </ul>
 

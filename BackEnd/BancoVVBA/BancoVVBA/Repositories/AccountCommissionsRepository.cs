@@ -38,6 +38,19 @@ namespace Banco_VVBA.Repositories
 
         internal async Task<ActionResult> CreateAccountCommissions(Account_Has_Commissions model)
         {
+            // Obtener la cuenta existente desde la base de datos, junto con el usuario asociado
+            var existingAccount = await _context.Accounts
+                                                .Include(acc => acc.User) // Incluir el usuario relacionado
+                                                .FirstOrDefaultAsync(acc => acc.AccountId == model.AccountId);
+
+            if (existingAccount == null)
+            {
+                return NotFound("La cuenta especificada no existe.");
+            }
+
+            // Asignar la cuenta existente al modelo, en lugar de crear una nueva
+            model.Account = existingAccount;
+            model.Commission = await _context.Commissions.FindAsync(model.CommissionId);
             _context.Account_Has_Commissions.Add(model);
             await _context.SaveChangesAsync();
             return Ok();

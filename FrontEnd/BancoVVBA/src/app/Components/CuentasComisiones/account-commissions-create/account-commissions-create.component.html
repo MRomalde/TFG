@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-6 mx-auto mt-3">
+    <div class="card_register">
+      <div class="card">
+        <div class="card-body text-center">
+          <form [formGroup]="formModel" autocomplete="off" (submit)="CreateAccountCommission()">
+            <h4 class="mb-3 font-weight-normal" style="margin: 0">Adjuntar una comision a una cuenta</h4>
+            <img src="assets/images/img-dolar.jpg" alt="imagen dolar" class="card-img-top">
+              <div class="form-group required" style="margin-top: 10px">
+                <select  class="custom-select" style="display:block;"  formControlName="SelectAccounts" (change)="EnableSelectCommission()">
+                  <option disabled>Elige una cuenta</option>
+                  <option *ngFor="let acc of accounts" value="{{acc.accountId}}">
+                    {{acc.user.surnameName}}
+                  </option>
+                </select>
+                <label class="text-danger" *ngIf="formModel.get('SelectAccounts')?.touched && formModel.get('SelectAccounts')?.value=='Elige una cuenta'">Debe elegir una cuenta</label>
+              </div>
+              <div class="form-group required">
+                <select [disabled]="true" id="selectCom" class="custom-select" style="display:block;" formControlName="SelectCommissions" (change)="commissionAlreadyTakenValidator()">
+                  <option disabled>Elige una comision</option>
+                  <option *ngFor="let com of commissions" value="{{com.commissionId}}">
+                    {{com.description}} ({{com.price}}€)
+                  </option>
+                </select>
+                <label class="text-danger" *ngIf="formModel.get('SelectCommissions')?.touched && formModel.get('SelectCommissions')?.value=='Elige una comision'">Debe elegir una comision</label>
+                <label class="text-danger" *ngIf="formModel.get('SelectCommissions')?.touched && formModel.errors?.['commissionExist']">La cuenta ya tiene esa comision</label>
+              </div>
+              <div class="form-group" >
+              <button type="submit" class="btn btn-lg btn-block" [disabled]="!formModel.valid || formModel.get('SelectCommissions')?.value=='Elige una comision'">
+                <i class="material-icons left">save</i>Crear
+              </button>
+              </div>
+              <div class="form-group" >
+                <button routerLink="/accountCommission/accountCommissions" class="btn black btn-block btn-lg"><i class="material-icons left">view_list</i>Cuentas y comisiones</button>              </div>  
+             
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

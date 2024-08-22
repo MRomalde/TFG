@@ -34,7 +34,11 @@ export class AccountCommissionsService {
   
   //Create the AccountCommissions
   CreateAccountCommissions(accountCommission:AccountCommission):Observable<any>{
-    return this.http.post(this.Uri + "/createAccountCommissions",accountCommission).pipe(catchError(this.handleError<any>('GetAllAccountCommissions',[])));
+    console.log(accountCommission);
+    return this.http.post(this.Uri + "/createAccountCommissions",accountCommission, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })}).pipe(catchError(this.handleError<any>('GetAllAccountCommissions',[])));
   }
   //Create the AccountCommissions
   DeleteAccountCommissions(accountCommissionId:number):Observable<any>{

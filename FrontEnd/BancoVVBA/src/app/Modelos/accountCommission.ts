@@ -8,8 +8,11 @@ export class AccountCommission{
     commissionId:number;
     commission!: Commission;
 
-    public constructor(accountId:number,commissionId:number){
+    public constructor(accountsHasCommissionsId:number, accountId:number, account: Account, commissionId:number, commission:Commission){
+        this.accountsHasCommissionsId= accountsHasCommissionsId;
         this.accountId=accountId;
+        this.account=account;
         this.commissionId=commissionId;
+        this.commission=commission;
     }
 }
