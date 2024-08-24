@@ -50,16 +50,33 @@ namespace Banco_VVBA.Repositories
 
         internal async Task<ActionResult> CreateOperation(OperationsViewModel model)
         {
-            var result = _context.Operations.Add(model);
+            // Asegúrate de que el objeto model no tenga valores en las propiedades que son gestionadas automáticamente
+            // como la clave primaria y las propiedades de identidad
+            var operation = new OperationsViewModel
+            {
+                Date = model.Date,
+                Concept = model.Concept,
+                Message = model.Message,
+                Amount = model.Amount,
+                AccountId = model.AccountId,
+                Account = await _accountService.findAccountToUpdateById(model.AccountId)
+            };
+
+            _context.Operations.Add(operation);
             await _context.SaveChangesAsync();
-            account = await _accountService.findAccountToUpdateById(model.AccountId);
+
+            // Actualizar el balance de la cuenta
+            var account = await _accountService.findAccountToUpdateById(model.AccountId);
             if (model.Concept.Equals("Entrada"))
                 account.Balance += model.Amount;
             else
                 account.Balance -= model.Amount;
+
             await _accountService.updateAccount(account);
+
             return Ok();
         }
+
 
         internal async Task<ActionResult> UpdateOper(OperationsViewModel oper)
         {

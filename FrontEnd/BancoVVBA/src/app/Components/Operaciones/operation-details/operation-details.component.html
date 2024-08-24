@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-6 mx-auto mt-3">
+    <div class="card_register">
+      <div class="card">
+        <div class="card-body text-center">
+          <form [formGroup]="formModel" autocomplete="off" (submit)="UpdateOperation()">
+            <h5 class="mb-3 font-weight-normal" style="margin: 0">Operacion de: {{currentOperation[0].account.user.surnameName}}</h5>
+            <img src="assets/images/img-dolar.jpg" alt="imagen dolar" class="card-img-top">
+            <div class="form-row">
+              <div class="form-group required">
+                <select class=" custom-select" style="display:block;" [(ngModel)]="currentOperation[0].concept" formControlName="SelectConcepto" (change)="EnableSelectAccounts()" >
+                  <option value="Entrada">Entrada</option>
+                  <option value="Salida">Salida</option>
+                </select>
+              </div>
+              <div class="form-group required separated">
+                <select id="selectAcc" class="custom-select" style="display:block;" [(ngModel)]="currentOperation[0].accountId" formControlName="SelectAccounts" (change)="GetMaxAmountOfTheOperation()">
+                  <option *ngFor="let acc of accounts" value="{{acc.accountId}}">
+                    {{acc.user.surnameName}}
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group required">
+              <input type="date" formControlName="Date" max='9999-12-31' [(ngModel)]="date" >
+              <label class="text-danger" *ngIf="formModel.get('Date')?.touched && formModel.get('Date')?.errors?.['required']">La fecha no puede estar vacia</label>
+            </div>
+            <div class="form-group required">
+              <input type="number" [(ngModel)]="currentOperation[0].amount" formControlName="Amount" placeholder="Cantidad (maxima {{maxAmountToCreateOperation}})" max="{{maxAmountToCreateOperation}}">
+              <label class="text-danger" *ngIf="formModel.get('Amount')?.touched && formModel.get('Amount')?.errors?.['required']">La cantidad no puede estar vacia</label>
+              <label class="text-danger" *ngIf="formModel.get('Amount')?.touched && formModel.get('Amount')?.errors?.['max']">La cantidad es mayor a la cantidad premitida: {{maxAmountToCreateOperation}}</label>
+              <label class="text-danger" *ngIf="formModel.get('Amount')?.touched && formModel.get('Amount')?.errors?.['min']">La cantidad no puede ser menor que 0.1</label>
+            </div>
+            <div class="form-group required">
+              <textarea formControlName="Message" [(ngModel)]="currentOperation[0].message" placeholder="Escribe tu mensaje" cols="50"></textarea>
+            </div>
+              <div class="form-group" >
+              <button type="submit" class="btn btn-lg btn-block" [disabled]="!formModel.valid">
+                <i class="material-icons left">save</i>Guardar
+              </button>
+              </div>
+              <div class="form-group" >
+                <button routerLink="/operation/operations" class="btn black btn-block btn-lg"><i class="material-icons left">view_list</i>operaciones</button>              </div>  
+             
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

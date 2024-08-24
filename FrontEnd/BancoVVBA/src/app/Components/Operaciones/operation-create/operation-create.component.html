@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-6 mx-auto mt-3">
+    <div class="card_register">
+      <div class="card">
+        <div class="card-body text-center">
+          <form [formGroup]="formModel" autocomplete="off" (submit)="CreateOperation()">
+            <h4 class="mb-3 font-weight-normal" style="margin: 0">Crear una operacion</h4>
+            <img src="assets/images/img-dolar.jpg" alt="imagen dolar" class="card-img-top">
+            <div class="form-row">
+              <div class="form-group required">
+                <select class=" custom-select" style="display:block;" formControlName="SelectConcepto" (change)="EnableSelectAccounts()" >
+                  <option disabled>Elige un concepto</option>
+                  <option value="Entrada">Entrada</option>
+                  <option value="Salida">Salida</option>
+                </select>
+                <label class="text-danger" *ngIf="formModel.get('SelectConcepto')?.touched && formModel.get('SelectConcepto')?.value=='Elige un concepto'">Debe elegir un concepto</label>
+              </div>
+              <div class="form-group required separated">
+                <select id="selectAcc" class="custom-select" style="display:block;"  formControlName="SelectAccounts" (change)="EnableInputsDependOfSelectAccounts()">
+                  <option disabled>Elige una cuenta</option>
+                  <option *ngFor="let acc of accounts" [value]="acc.accountId">
+                    {{acc.user.surnameName}}
+                  </option>
+                </select>
+                <label class="text-danger" *ngIf="formModel.get('SelectAccounts')?.touched && formModel.get('SelectAccounts')?.value=='Elige una cuenta'">Debe elegir una cuenta</label>
+              </div>
+            </div>
+            <div class="form-group required">
+              <input type="date" formControlName="Date" [disabled]="true" name="DependsOfSelectAccount" max='9999-12-31'>
+              <label class="text-danger" *ngIf="formModel.get('Date')?.touched && formModel.get('Date')?.errors?.['required']">La fecha no puede estar vacia</label>
+            </div>
+            <div class="form-group required">
+              <input type="number" formControlName="Amount" [disabled]="true" name="DependsOfSelectAccount" placeholder="Cantidad (maxima {{maxAmountToCreateOperation}})" max="{{maxAmountToCreateOperation}}">
+              <label class="text-danger" *ngIf="formModel.get('Amount')?.touched && formModel.get('Amount')?.errors?.['required']">La cantidad no puede estar vacia</label>
+              <label class="text-danger" *ngIf="formModel.get('Amount')?.touched && formModel.get('Amount')?.errors?.['max']">La cantidad es mayor a la cantidad premitida: {{maxAmountToCreateOperation}}</label>
+              <label class="text-danger" *ngIf="formModel.get('Amount')?.touched && formModel.get('Amount')?.errors?.['min']">La cantidad no puede ser menor que 0.1</label>
+            </div>
+            <div class="form-group required">
+              <textarea formControlName="Message" [disabled]="true" name="DependsOfSelectAccount" placeholder="Escribe tu mensaje" cols="50"></textarea>
+            </div>
+              <div class="form-group" >
+              <button type="submit" class="btn btn-lg btn-block" [disabled]="!formModel.valid">
+                <i class="material-icons left">save</i>Guardar
+              </button>
+              </div>
+              <div class="form-group" >
+                <button routerLink="/operation/operations" class="btn black btn-block btn-lg"><i class="material-icons left">view_list</i>operaciones</button>              </div>  
+             
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -11,6 +11,8 @@ import { CommissionDetailsComponent } from './Components/Comisiones/commission-d
 import { CommissionCreateComponent } from './Components/Comisiones/commission-create/commission-create.component';
 import { AccountDetailsComponent } from './Components/Cuentas/account-details/account-details.component';
 import { AccountCommissionsCreateComponent } from './Components/CuentasComisiones/account-commissions-create/account-commissions-create.component';
+import { OperationDetailsComponent } from './Components/Operaciones/operation-details/operation-details.component';
+import { OperationCreateComponent } from './Components/Operaciones/operation-create/operation-create.component';
 
 export const routes: Routes = [
     {path:"user/login", component: LoginComponent},
@@ -20,6 +22,8 @@ export const routes: Routes = [
     {path:"account/accounts", component:AccountsComponent},
     {path:"account/details/:id", component:AccountDetailsComponent},
     {path:"operation/operations", component:OperationsComponent},
+    {path:"operation/details/:id", component:OperationDetailsComponent},
+    {path:"operation/create", component:OperationCreateComponent},
     {path:"commission/commissions", component:CommissionsComponent},
     {path:"commission/details/:id", component:CommissionDetailsComponent},
     {path:"commission/create", component:CommissionCreateComponent},

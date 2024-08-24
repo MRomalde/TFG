@@ -25,7 +25,12 @@ export class OperationService {
   }
   //Create an operation
   CreateOperation(oper:Operation):Observable<any>{
-    return this.http.post(this.Uri + "/createOperation",oper).pipe(catchError(this.handleError<any>('CreateOper',[])));
+    console.log(JSON.stringify(oper));
+    console.log(oper)
+    return this.http.post(this.Uri + "/createOperation",oper, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })}).pipe(catchError(this.handleError<any>('CreateOper',[])));
   }
   //Create a transfer
   CreateTrasfer(oper:Operation):Observable<any>{

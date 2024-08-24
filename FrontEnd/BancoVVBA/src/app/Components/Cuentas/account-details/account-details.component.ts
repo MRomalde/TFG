@@ -40,7 +40,6 @@ export class AccountDetailsComponent implements OnInit {
     var accountId=+(this.route.snapshot.paramMap.get('id') ?? 0);
     this.accService.GetAccountById(accountId).subscribe(res=>{
       this.account=res;
-      console.log(this.account);
     });
   }
 

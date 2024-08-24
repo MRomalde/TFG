@@ -9,12 +9,14 @@ export class Operation{
     accountId:number;
     account!: Account;
 
-    public constructor(date:Date,concept:string,message:string,amount:number,accountId:number){
+    public constructor(operationId:number,date:Date,concept:string,message:string,amount:number,accountId:number, account:Account){
+        this.operationId=operationId;
         this.date=date;
         this.concept=concept;
         this.message=message;
         this.amount=amount;
         this.accountId=accountId;
+        this.account=account;
     }
 
 }

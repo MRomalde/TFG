@@ -6,13 +6,14 @@ import { User } from '../../../Modelos/user';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { AccountSearchComponent } from '../account-search/account-search.component';
 
 @Component({
   selector: 'app-accounts',
   templateUrl: './accounts.component.html',
   styleUrls: ['./accounts.component.css'],
   standalone: true,
-  imports: [FormsModule, CommonModule, RouterModule]
+  imports: [FormsModule, CommonModule, RouterModule, AccountSearchComponent]
 
 })
 export class AccountsComponent implements OnInit {
