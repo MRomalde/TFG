@@ -1,0 +1,19 @@
+<div id="search-component">
+    <div class="row"><div class="col-12"></div></div>
+    <div class="row withoutMargin">
+        <div class="col-sm-1 col-md-3"></div>
+        <div class="col-sm-4 col-md-4"><h5 class="withoutMargin" style="text-align: right">Busque un usuario</h5></div>
+        <input class="col-sm-7 col-md-5 inputDown" #searchBox id="search-box" (input)="search(searchBox.value)" />
+    </div>
+    <div class="row withoutMargin listUp">
+       <div class="col-sm-1 col-md-3"></div>
+       <div class="col-sm-4 col-md-5"></div>
+       <ul class="search-result col-sm-7 col-md-4 withoutMargin">
+         <li *ngFor="let user of userList$ | async" >
+         <a routerLink="/user/details/{{user.userId}}">
+           {{user.surnameName}}
+         </a>
+       </li>
+     </ul>
+    </div>
+</div>

@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { SearchComponent } from '../search/search.component';
 import Swal from 'sweetalert2';
 
 
@@ -14,7 +15,7 @@ import Swal from 'sweetalert2';
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css'],
   standalone: true,
-  imports: [FormsModule, CommonModule, RouterModule]
+  imports: [FormsModule, CommonModule, RouterModule, SearchComponent]
 
 })
 export class UsersComponent implements OnInit {
