@@ -14,14 +14,7 @@ namespace Banco_VVBA.Services.AccountService
     public class AccountService : IAccountService
     {
         #region Fields
-        public string ibanForNewAccount;
         public IEnumerable<UsersViewModel> user;
-        public UserAccountsViewModel accountForNewUser = new UserAccountsViewModel
-        {
-            Balance = 0.0, 
-            IBAN = "IBAN a modificar", 
-            UserId = -1
-        };
         public UserRepository _userRepository;
         #endregion
         #region declaration of repository
@@ -81,31 +74,7 @@ namespace Banco_VVBA.Services.AccountService
         }
 
         #region Create account
-        internal void CreateAccountFromRegister(string dni)
-        {
-            
-            user = _userRepository.FindUserByDni(dni);
-            ibanForNewAccount = OneIBANMore();
-            ChargeAccount(ibanForNewAccount, user.ElementAt(0));
-            CreateAccount(accountForNewUser);
-
-        }
-        public string OneIBANMore()
-        {
-            string iban = "ES";
-            int numIban = FindLastIban();
-            numIban++;
-            iban += numIban;
-            return iban;
-
-        }
-        public void ChargeAccount(string iban, UsersViewModel user)
-        {
-
-            accountForNewUser.Balance = 0;
-            accountForNewUser.IBAN = iban;
-            accountForNewUser.UserId = user.UserId;
-        }
+        
         public int FindLastIban()
         {
             var result = _accountRespository.FindLastIban();

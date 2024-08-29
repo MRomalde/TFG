@@ -19,6 +19,13 @@ namespace Banco_VVBA.Repositories
         private readonly IConfiguration _configuration;
         private readonly BancoVVBAContext _context;
         public AccountService _accountService;
+        public string ibanForNewAccount;
+        public UserAccountsViewModel accountForNewUser = new UserAccountsViewModel
+        {
+            Balance = 0.0,
+            IBAN = "IBAN a modificar",
+            UserId = -1
+        };
         #endregion
         #region Constructor
         public UserRepository(BancoVVBAContext context, IConfiguration configuration)
@@ -51,13 +58,47 @@ namespace Banco_VVBA.Repositories
                 TypeAccess = await _context.UsersTypeAccess.FindAsync(userModel.TypeAccessId)
             };
             _context.Users.Add(newUser);
-            await _context.SaveChangesAsync();
             //create the account for the user
-            _accountService.CreateAccountFromRegister(userModel.Dni);
-            return Ok();
+            CreateAccountFromRegister(newUser);
+            try
+            {
+                _context.Accounts.Add(accountForNewUser);
+                await _context.SaveChangesAsync();
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                // Log the exception (you can use any logging framework)
+                Console.WriteLine($"Error: {ex.Message}");
+                return StatusCode(500, "Internal server error");
+            }
+
 
         }
+        internal void CreateAccountFromRegister(UsersViewModel user)
+        {
 
+            ibanForNewAccount = OneIBANMore();
+            ChargeAccount(ibanForNewAccount, user);
+
+        }
+        public string OneIBANMore()
+        {
+            string iban = "ES";
+            int numIban = _accountService.FindLastIban();
+            numIban++;
+            iban += numIban;
+            return iban;
+
+        }
+        public void ChargeAccount(string iban, UsersViewModel user)
+        {
+
+            accountForNewUser.Balance = 0;
+            accountForNewUser.IBAN = iban;
+            accountForNewUser.UserId = user.UserId;
+            accountForNewUser.User = user;
+        }
         internal async Task<IEnumerable<UsersViewModel>> SearchByName(string name)
         {
             var result = await _context.Users.Where(User => User.SurnameName.Contains(name)).ToListAsync();

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BancoVVBA.Migrations
 {
     [DbContext(typeof(BancoVVBAContext))]
-    [Migration("20240806155133_First Migration")]
+    [Migration("20240829103607_First Migration")]
     partial class FirstMigration
     {
         /// <inheritdoc />
