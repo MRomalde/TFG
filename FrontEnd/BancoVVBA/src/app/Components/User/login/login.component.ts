@@ -64,8 +64,9 @@ export class LoginComponent implements OnInit {
           this.router.navigate(["/user/myAccount"]);
         break;
         case 3:
-         this.toastr.info("Usuario deshabilitado, por favor contacte con un administrador","Usuario Deshabilitado");
-         this.formLogin.reset();
+          localStorage.removeItem("currentUser")
+          this.toastr.info("Usuario deshabilitado, por favor contacte con un administrador","Usuario Deshabilitado");
+          this.formLogin.reset();
         break;
         default:
             this.formLogin.reset();            

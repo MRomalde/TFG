@@ -10,7 +10,6 @@ import { RouterModule } from '@angular/router';
 import { AbstractControl, ValidationErrors } from '@angular/forms';
 import { Observable, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
-import { UsersTypeAccess } from '../../../Modelos/usersTypeAccess';
 
 @Component({
   selector: 'app-register',
@@ -67,72 +66,72 @@ export class RegisterComponent implements OnInit {
         confirmPasswordControl!.setErrors(null);
     }
   }
-// DniExistInDb validator
-DniExistInDb(control: AbstractControl): Observable<ValidationErrors | null> {
-  return this.userService.DniExistInDb(control.value).pipe(
-    map(data => (data ? { DniExist: true } : null)),
-    catchError(() => of(null))
-  );
-}
+  // DniExistInDb validator
+  DniExistInDb(control: AbstractControl): Observable<ValidationErrors | null> {
+    return this.userService.DniExistInDb(control.value).pipe(
+      map(data => (data ? { DniExist: true } : null)),
+      catchError(() => of(null))
+    );
+  }
 
-// LoginExistInDb validator
-LoginExistInDb(control: AbstractControl): Observable<ValidationErrors | null> {
-  return this.userService.LoginExistInDb(control.value).pipe(
-    map(data => (data ? { LoginExist: true } : null)),
-    catchError(() => of(null))
-  );
-}
+  // LoginExistInDb validator
+  LoginExistInDb(control: AbstractControl): Observable<ValidationErrors | null> {
+    return this.userService.LoginExistInDb(control.value).pipe(
+      map(data => (data ? { LoginExist: true } : null)),
+      catchError(() => of(null))
+    );
+  }
 
-// EmailExistInDb validator
-EmailExistInDb(control: AbstractControl): Observable<ValidationErrors | null> {
-  return this.userService.EmailExistInDb(control.value).pipe(
-    map(data => (data ? { EmailExist: true } : null)),
-    catchError(() => of(null))
-  );
-}
+  // EmailExistInDb validator
+  EmailExistInDb(control: AbstractControl): Observable<ValidationErrors | null> {
+    return this.userService.EmailExistInDb(control.value).pipe(
+      map(data => (data ? { EmailExist: true } : null)),
+      catchError(() => of(null))
+    );
+  }
 
-Register() {
-  this.surnameName = this.formModel.value.Surname + "," + this.formModel.value.Name;
-  this.alias = this.surnameName.substring(0, 2) + this.surnameName.substring(this.surnameName.length - 2);
+  Register() {
+    this.surnameName = this.formModel.value.Surname + "," + this.formModel.value.Name;
+    this.alias = this.surnameName.substring(0, 2) + this.surnameName.substring(this.surnameName.length - 2);
 
-  this.userService.AliasExistInDb(this.alias).subscribe(data => {
-      this.alias = data;
-      
-      // Asignar los valores del formulario al usuario
-      const userName: string = String(this.formModel.value.UserName || '');
-      const password: string = String(this.formModel.value.Passwords.Password || '');
-      const dni: string = String(this.formModel.value.Dni || '');
-      const telephone: string = String(this.formModel.value.Telephone || '');
-      const email: string = String(this.formModel.value.Email || '');
-      
-      // Crear el usuario con el typeAccessId establecido en 3
-      this.userToRegister = new User(
-          this.surnameName,
-          this.alias,
-          userName,
-          password,
-          dni,
-          Number(telephone),
-          email,
-          3 // TypeAccessId establecido en 3
-      );
-      
-      // Llamar al servicio para registrar al usuario
-      this.userService.CreateUserFromRegister(this.userToRegister).subscribe({
-          next: (res: any) => {
-              this.formModel.reset();
-              this.toastr.success("Nuevo usuario creado", "Registrado con éxito");
-              this.router.navigate(["/user/login"]);
-          },
-          error: (err: any) => {
-              console.log('Register failed:', err);
-              if (err.error && err.error.errors) {
-                  console.log('Validation errors:', err.error.errors);
-              }
-          }
-      });
-  });
-}
+    this.userService.AliasExistInDb(this.alias).subscribe(data => {
+        this.alias = data;
+        
+        // Asignar los valores del formulario al usuario
+        const userName: string = String(this.formModel.value.UserName || '');
+        const password: string = String(this.formModel.value.Passwords.Password || '');
+        const dni: string = String(this.formModel.value.Dni || '');
+        const telephone: string = String(this.formModel.value.Telephone || '');
+        const email: string = String(this.formModel.value.Email || '');
+        
+        // Crear el usuario con el typeAccessId establecido en 3
+        this.userToRegister = new User(
+            this.surnameName,
+            this.alias,
+            userName,
+            password,
+            dni,
+            Number(telephone),
+            email,
+            3 // TypeAccessId establecido en 3
+        );
+        
+        // Llamar al servicio para registrar al usuario
+        this.userService.CreateUserFromRegister(this.userToRegister).subscribe({
+            next: (res: any) => {
+                this.formModel.reset();
+                this.toastr.success("Nuevo usuario creado", "Registrado con éxito");
+                this.router.navigate(["/user/login"]);
+            },
+            error: (err: any) => {
+                console.log('Register failed:', err);
+                if (err.error && err.error.errors) {
+                    console.log('Validation errors:', err.error.errors);
+                }
+            }
+        });
+    });
+  }
 
 }
 

@@ -156,11 +156,9 @@ export class UserDetailsComponent implements OnInit {
       userList[0].login=this.formModel.value.UserName;
       userList[0].password=this.formModel.value.Passwords.Password;
       userList[0].typeAccessId=this.formModel.value.UserTypeAccess;
-      //TODO
       this.userService.AliasExistInDb(userList[0].alias).subscribe(data=>{
         userList[0].alias=data;
       });
-      console.log(userList[0]);
       //call to the service to update user
       this.userService.UpdateUser(userList[0]).subscribe((res:any)=>{
         //find the user created and then create his account  in the back

@@ -1,0 +1,95 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-5 mx-auto mt-3">
+    <div class="card_register">
+      <div class="card">
+        <div class="card-body text-center">
+          <form [formGroup]="formModel" autocomplete="off" (submit)="Register()">
+            <h4 class="mb-3 font-weight-normal" style="margin: 0">Crear un usuario</h4>
+            <img src="assets/images/fotousuario.png" alt="imagen login" class="card-img-top">
+            <div class="form-row">
+              <div class="form-group required">
+                <input type="text" class="form-control" minlength="2" maxlength="24"
+                placeholder="Nombre" formControlName="Name">
+                <label class="text-danger" *ngIf="formModel.get('Name')?.touched && formModel.get('Name')?.errors?.['required']">El campo nombre es obligatorio</label>
+                <label class="text-danger" *ngIf="formModel.get('Name')?.touched && formModel.get('Name')?.errors?.['minlength']">Debe tener minimo 2 caracteres</label>
+              </div>
+            </div>
+              <div class="form-row">
+                <div class="form-group required">
+                  <input type="text" class="form-control " minlength="2" maxlength="25"
+                  placeholder="Apellidos" formControlName="Surname">
+                  <label class="text-danger" *ngIf="formModel.get('Surname')?.touched && formModel.get('Surname')?.errors?.['required']">El campo apellidos es obligatorio</label>
+                  <label class="text-danger" *ngIf="formModel.get('Surname')?.touched && formModel.get('Surname')?.errors?.['minlength']">Debe tener minimo 2 caracteres</label>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group required">
+                  <input type="email" class="form-control" maxlength="50"
+                  placeholder="Email" formControlName="Email">
+                  <label class="text-danger" *ngIf="formModel.get('Email')?.touched && formModel.get('Email')?.errors?.['email']">Formato incorrecto</label>                   
+                  <label class="text-danger" *ngIf="formModel.get('Email')?.touched && formModel.get('Email')?.errors?.['EmailExist']">Email ya existente</label>
+                  <label class="text-danger" *ngIf="formModel.get('Email')?.touched && formModel.get('Email')?.errors?.['required']">El campo email es obligatorio</label>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group required">
+                  <input class="form-control" type="number" placeholder="Telefono" formControlName="Telephone">
+                  <label class="text-danger" *ngIf="formModel.get('Telephone')?.touched && formModel.get('Telephone')?.errors?.['required']">El campo telefono es obligatorio</label>
+                  <label class="text-danger" *ngIf="formModel.get('Telephone')?.touched && (formModel.get('Telephone')?.errors?.['min']||formModel.get('Telephone')?.errors?.['max'])">Debe empezar por 6/7 y tener 9 digitos</label>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group required">
+                  <input type="text" class="form-control" pattern="\d{8}[A-Z]" 
+                  placeholder="Dni" formControlName="Dni" maxlength="9">
+                  <label class="text-danger" *ngIf="formModel.get('Dni')?.touched && formModel.get('Dni')?.errors?.['required']">El campo dni es obligatorio</label>
+                  <label class="text-danger" *ngIf="formModel.get('Dni')?.touched && formModel.get('Dni')?.errors?.['pattern']">Debe tener 8 cifras y letra mayuscula</label>
+                  <label class="text-danger" *ngIf="formModel.get('Dni')?.touched && formModel.get('Dni')?.errors?.['DniExist']">Ya existe un dni con ese valor</label>
+                </div>
+              </div>
+            <div class="form-row">
+              <div class="form-group required">
+                <input type="text" class="form-control"
+                 placeholder="Username" formControlName="UserName" maxlength="15">
+                 <label class="text-danger" *ngIf="formModel.get('UserName')?.touched && formModel.get('UserName')?.errors?.['required']">El campo username es obligatorio</label>
+                 <label class="text-danger" *ngIf="formModel.get('UserName')?.touched && formModel.get('UserName')?.errors?.['LoginExist']">Ya existe un username con ese valor</label>
+               </div>             
+            </div>
+            <div formGroupName="Passwords" class="form-row">
+              <div class="form-group required">
+                <input type="password" class="form-control" maxlength="25" #password
+                placeholder="Password" formControlName="Password">
+                <label class="text-danger" *ngIf="formModel.get('Passwords.Password')?.touched && formModel.get('Passwords.Password')?.errors?.['required']">El campo password es obligatorio</label>
+              </div>
+              <div class="form-group required separated">
+                <input type="password" class="form-control"
+                placeholder="Confirm password" formControlName="ConfirmPassword" maxlength="25">
+                <label class="text-danger" *ngIf="formModel.get('Passwords.ConfirmPassword')?.touched && formModel.get('Passwords.ConfirmPassword')?.errors?.['required']">El campo confirm password es obligatorio</label>
+                <label class="text-danger" *ngIf="formModel.get('Passwords.ConfirmPassword')?.touched && formModel.get('Passwords.ConfirmPassword')?.errors?.['passwordMismatch']">Las contraseñas no coinciden</label>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group" style="margin-left: 30%">
+                  <label for="typeUserSelectedCreate">Elija el tipo de usuario</label>
+                <select style="display:block;" id="typeUserSelectedCreate" formControlName="UserTypeAccess">
+                  <option disabled>Tipo de usuario</option>
+                  <option *ngFor="let typeUserAccess of typeUserAccessList" value="{{typeUserAccess.typeAccessId}}">
+                    {{typeUserAccess.description}}
+                  </option>
+                </select>
+                <label class="text-danger" *ngIf="formModel.get('UserTypeAccess')?.touched && formModel.get('UserTypeAccess')?.value=='Tipo de usuario'">Debe elegir un tipo de usuario</label>
+              </div>
+            </div>
+              <div class="form-group">
+              <button type="submit" class="btn btn-lg btn-block" [disabled]="!formModel.valid || formModel.get('UserTypeAccess')?.value=='Tipo de usuario'">
+                <i class="material-icons left">save</i>Guardar
+              </button>
+              </div>
+              <div class="form-group" >
+                <button routerLink="/user/users" class="btn black btn-block btn-lg"><i class="material-icons left">view_list</i>usuarios</button>              </div>        
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
