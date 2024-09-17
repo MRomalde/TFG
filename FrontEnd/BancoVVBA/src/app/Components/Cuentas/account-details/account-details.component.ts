@@ -33,6 +33,7 @@ export class AccountDetailsComponent implements OnInit {
     if(this.currentUser.typeAccessId==2){
       this.router.navigate(["/user/myAccount"]);
     }
+    this.formModel.get('Iban')?.disable();
     this.GetAccountById();
   }
 
