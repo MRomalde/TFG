@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BancoVVBA")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+27d73c6c173217cca58d92d795a7aa3d9f549a8f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0551f1a867be479334cd4ceb990adb7d4475eed7")]
 [assembly: System.Reflection.AssemblyProductAttribute("BancoVVBA")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BancoVVBA")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

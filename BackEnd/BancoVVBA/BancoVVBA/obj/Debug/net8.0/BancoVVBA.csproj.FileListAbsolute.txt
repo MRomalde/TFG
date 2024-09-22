@@ -149,7 +149,6 @@ C:\Users\MRoma\Desktop\BancoVVBA new\TFG\BackEnd\BancoVVBA\BancoVVBA\bin\Debug\n
 C:\Users\MRoma\Desktop\BancoVVBA new\TFG\BackEnd\BancoVVBA\BancoVVBA\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\MRoma\Desktop\BancoVVBA new\TFG\BackEnd\BancoVVBA\BancoVVBA\bin\Debug\net8.0\Azure.Identity.dll
 C:\Users\MRoma\Desktop\BancoVVBA new\TFG\BackEnd\BancoVVBA\BancoVVBA\bin\Debug\net8.0\Humanizer.dll
-C:\Users\MRoma\Desktop\BancoVVBA new\TFG\BackEnd\BancoVVBA\BancoVVBA\bin\Debug\net8.0\MailKit.dll
 C:\Users\MRoma\Desktop\BancoVVBA new\TFG\BackEnd\BancoVVBA\BancoVVBA\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\MRoma\Desktop\BancoVVBA new\TFG\BackEnd\BancoVVBA\BancoVVBA\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
 C:\Users\MRoma\Desktop\BancoVVBA new\TFG\BackEnd\BancoVVBA\BancoVVBA\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
@@ -173,10 +172,7 @@ C:\Users\MRoma\Desktop\BancoVVBA new\TFG\BackEnd\BancoVVBA\BancoVVBA\bin\Debug\n
 C:\Users\MRoma\Desktop\BancoVVBA new\TFG\BackEnd\BancoVVBA\BancoVVBA\bin\Debug\net8.0\Microsoft.OpenApi.dll
 C:\Users\MRoma\Desktop\BancoVVBA new\TFG\BackEnd\BancoVVBA\BancoVVBA\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 C:\Users\MRoma\Desktop\BancoVVBA new\TFG\BackEnd\BancoVVBA\BancoVVBA\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
-C:\Users\MRoma\Desktop\BancoVVBA new\TFG\BackEnd\BancoVVBA\BancoVVBA\bin\Debug\net8.0\MimeKit.dll
 C:\Users\MRoma\Desktop\BancoVVBA new\TFG\BackEnd\BancoVVBA\BancoVVBA\bin\Debug\net8.0\Mono.TextTemplating.dll
-C:\Users\MRoma\Desktop\BancoVVBA new\TFG\BackEnd\BancoVVBA\BancoVVBA\bin\Debug\net8.0\NETCore.MailKit.dll
-C:\Users\MRoma\Desktop\BancoVVBA new\TFG\BackEnd\BancoVVBA\BancoVVBA\bin\Debug\net8.0\BouncyCastle.Crypto.dll
 C:\Users\MRoma\Desktop\BancoVVBA new\TFG\BackEnd\BancoVVBA\BancoVVBA\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\MRoma\Desktop\BancoVVBA new\TFG\BackEnd\BancoVVBA\BancoVVBA\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\MRoma\Desktop\BancoVVBA new\TFG\BackEnd\BancoVVBA\BancoVVBA\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll

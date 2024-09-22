@@ -8,9 +8,7 @@ using Banco_VVBA.Services.UserService;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-using MailKit.Net.Smtp;
-using MailKit;
-using MimeKit;
+
 
 namespace Banco_VVBA.Controllers
 {
@@ -74,43 +72,6 @@ namespace Banco_VVBA.Controllers
         {
             var result= await _userService.Register(userModel);
             return result;
-        }
-        //Post:api/[controller]/passwordRecovery
-        [HttpGet("passwordRecovery/{mail}")]
-        public async Task<bool> PasswordRecovery(string mail)
-        {
-            var user = await _userService.FindUserByGmail(mail);
-            string NewPassword=GenerateNewPassword();
-            if (user.Any())
-            {
-                //instantiate mimemessage
-                var message = new MimeMessage();
-                //From address
-                message.From.Add(new MailboxAddress("BancoVVBA", "BancoVVBA@gmail.com"));
-                //To address
-                message.To.Add(new MailboxAddress(user.ElementAt(0).SurnameName, mail));
-                //Subject
-                message.Subject = "Recuperar Contraseña";
-                //Body
-                message.Body = new TextPart("plain")
-                {
-                    Text = "Hola Su nueva contraseña es: " + NewPassword
-                };
-                using (var client = new SmtpClient())
-                {
-                    client.Connect("smtp.gmail.com", 587, false);
-                    //have to create a gmail with that 
-                    client.Authenticate("BancoVVBA@gmail.com", "altair2019");
-                    client.Send(message);
-                    client.Disconnect(true);
-
-                }
-                user.ElementAt(0).Password = NewPassword;
-                await _userService.UpdateUser(user.ElementAt(0).UserId, user.ElementAt(0));
-                return true;
-            }
-            else
-                return false;
         }
 
         private string GenerateNewPassword()
